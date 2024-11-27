@@ -52,78 +52,7 @@
 
     ?>
     <div class="container">
-        <div class="menu">
-            <table class="menu-container" border="0">
-                <tr>
-                    <td style="padding:10px" colspan="2">
-                        <table border="0" class="profile-container">
-                            <tr>
-                                <td width="30%" style="padding-left:20px">
-                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
-                                </td>
-                                <td style="padding:0px;margin:0px;">
-                                    <p class="profile-title"><?php echo substr($user_name, 0, 13) ?></p>
-                                    <p class="profile-subtitle"><?php echo substr($user_email, 0, 22) ?></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a href="../logout.php"><input type="button" value="Deconectare"
-                                            class="logout-btn btn-primary-soft btn"></a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-home menu-active menu-icon-home-active">
-                        <a href="index.php" class="non-style-link-menu non-style-link-menu-active">
-                            <div>
-                                <p class="menu-text">Acasă</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-doctor">
-                        <a href="doctors.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Toți medicii</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-session">
-                        <a href="schedule.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Servicii</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-appoinment">
-                        <a href="appointment.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Programările mele</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-settings">
-                        <a href="settings.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Setări</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-
-            </table>
-        </div>
+        <?php require_once './includes/menu.php' ?>
         <div class="dash-body">
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr>
@@ -298,7 +227,11 @@
                                                                     Starts: <b>@' . substr($appointment_time, 0, 5) . '</b> (24h)
                                                                 </div>
                                                                 <br>
-                                                                <a href="?action=drop&id=' . $appointment_id . '" ><button  class="login-btn btn-primary-soft btn "  style="padding-top:11px;padding-bottom:11px;width:100%"><font class="tn-in-text">Anulare Programare</font></button></a>
+                                                                <a href="?action=drop&id=' . $appointment_id . '&service=' . $service_name . '&doctor=' . $doctor_name . '" >
+                                                                    <button  class="login-btn btn-primary-soft btn "  style="padding-top:11px;padding-bottom:11px;width:100%">
+                                                                        <font class="tn-in-text">Anulare Programare</font>
+                                                                    </button>
+                                                                </a>
                                                         </div>
                                                                 
                                                     </div>
@@ -307,47 +240,6 @@
                                                 }
                                                 echo "</tr>";
 
-                                                // for ( $x=0; $x<$result->num_rows;$x++){
-                                                //     $row=$result->fetch_assoc();
-                                                //     $appoid=$row["appoid"];
-                                                //     $scheduleid=$row["scheduleid"];
-                                                //     $title=$row["title"];
-                                                //     $docname=$row["docname"];
-                                                //     $scheduledate=$row["scheduledate"];
-                                                //     $scheduletime=$row["scheduletime"];
-                                                //     $pname=$row["pname"];
-                                                //     
-                                                //     
-                                                //     echo '<tr >
-                                                //         <td style="font-weight:600;"> &nbsp;'.
-                                        
-                                                //         substr($pname,0,25)
-                                                //         .'</td >
-                                                //         <td style="text-align:center;font-size:23px;font-weight:500; color: var(--btnnicetext);">
-                                                //         '.$apponum.'
-                                        
-                                                //         </td>
-                                                //         <td>
-                                                //         '.substr($title,0,15).'
-                                                //         </td>
-                                                //         <td style="text-align:center;;">
-                                                //             '.substr($scheduledate,0,10).' @'.substr($scheduletime,0,5).'
-                                                //         </td>
-                                        
-                                                //         <td style="text-align:center;">
-                                                //             '.$appodate.'
-                                                //         </td>
-                                        
-                                                //         <td>
-                                                //         <div style="display:flex;justify-content: center;">
-                                        
-                                                //         <!--<a href="?action=view&id='.$appoid.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
-                                                //        &nbsp;&nbsp;&nbsp;-->
-                                                //        <a href="?action=drop&id='.$appoid.'&name='.$pname.'&session='.$title.'&apponum='.$apponum.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-delete"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Cancel</font></button></a>
-                                                //        &nbsp;&nbsp;&nbsp;</div>
-                                                //         </td>
-                                                //     </tr>';
-                                        
                                             }
                                         }
 
@@ -369,165 +261,163 @@
     <?php
 
     if ($_GET) {
-        $id = $_GET["id"];
         $action = $_GET["action"];
         if ($action == 'booking-added') {
-
-            echo '
+            ?>
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                <div class="popup">
                     <center>
-                    <br><br>
+                        <br><br>
                         <h2>Booking Successfully.</h2>
                         <a class="close" href="appointment.php">&times;</a>
-                        <div class="content">
-                        Your Appointment number is ' . $id . '.<br><br>
-                            
-                        </div>
                         <div style="display: flex;justify-content: center;">
-                        
-                        <a href="appointment.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;OK&nbsp;&nbsp;</font></button></a>
-                        <br><br><br><br>
+
+                            <a href="appointment.php" class="non-style-link"><button class="btn-primary btn"
+                                    style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;">
+                                    <font class="tn-in-text">&nbsp;&nbsp;OK&nbsp;&nbsp;</font>
+                                </button></a>
+                            <br><br><br><br>
                         </div>
                     </center>
+                </div>
             </div>
-            </div>
-            ';
+            <?php
         } elseif ($action == 'drop') {
-            $title = $_GET["title"];
-            $docname = $_GET["doc"];
+            $appointment_id = $_GET["id"];
+            $service_name = $_GET["service"];
+            $doctor_name = $_GET["doctor"];
 
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
                     <center>
-                        <h2>Are you sure?</h2>
+                        <h2>Are you sure??</h2>
                         <a class="close" href="appointment.php">&times;</a>
                         <div class="content">
                             You want to Cancel this Appointment?<br><br>
-                            Session Name: &nbsp;<b>' . substr($title, 0, 40) . '</b><br>
-                            Doctor name&nbsp; : <b>' . substr($docname, 0, 40) . '</b><br><br>
+                            Session Name: &nbsp;<b>' . substr($service_name, 0, 40) . '</b><br>
+                            Doctor name&nbsp; : <b>' . substr($doctor_name, 0, 40) . '</b><br><br>
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
-                        <a href="delete-appointment.php?id=' . $id . '" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
+                        <a href="delete-appointment.php?id=' . $appointment_id . '" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
                         <a href="appointment.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;No&nbsp;&nbsp;</font></button></a>
-
                         </div>
                     </center>
-            </div>
-            </div>
-            ';
-        } elseif ($action == 'view') {
-            $sqlmain = "select * from doctor where docid=?";
-            $stmt = $database->prepare($sqlmain);
-            $stmt->bind_param("i", $id);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $row = $result->fetch_assoc();
-            $name = $row["docname"];
-            $email = $row["docemail"];
-            $spe = $row["specialties"];
-
-            $sqlmain = "select sname from specialties where id=?";
-            $stmt = $database->prepare($sqlmain);
-            $stmt->bind_param("s", $spe);
-            $stmt->execute();
-            $spcil_res = $stmt->get_result();
-            $spcil_array = $spcil_res->fetch_assoc();
-            $spcil_name = $spcil_array["sname"];
-            $nic = $row['docnic'];
-            $tele = $row['doctel'];
-            echo '
-            <div id="popup1" class="overlay">
-                    <div class="popup">
-                    <center>
-                        <h2></h2>
-                        <a class="close" href="doctors.php">&times;</a>
-                        <div class="content">
-                            eDoc Web App<br>
-                            
-                        </div>
-                        <div style="display: flex;justify-content: center;">
-                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
-                        
-                            <tr>
-                                <td>
-                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">View Details.</p><br><br>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                
-                                <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Name: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    ' . $name . '<br><br>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="Email" class="form-label">Email: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                ' . $email . '<br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="nic" class="form-label">NIC: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                ' . $nic . '<br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="Tele" class="form-label">Telephone: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                ' . $tele . '<br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="spec" class="form-label">Specialties: </label>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                            <td class="label-td" colspan="2">
-                            ' . $spcil_name . '<br><br>
-                            </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a href="doctors.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
-                                
-                                    
-                                </td>
-                
-                            </tr>
-                           
-
-                        </table>
-                        </div>
-                    </center>
-                    <br><br>
             </div>
             </div>
             ';
         }
+        // elseif ($action == 'view') {
+        //     $sqlmain = "select * from doctor where docid=?";
+        //     $stmt = $database->prepare($sqlmain);
+        //     $stmt->bind_param("i", $id);
+        //     $stmt->execute();
+        //     $result = $stmt->get_result();
+        //     $row = $result->fetch_assoc();
+        //     $name = $row["docname"];
+        //     $email = $row["docemail"];
+        //     $spe = $row["specialties"];
+    
+        //     $sqlmain = "select sname from specialties where id=?";
+        //     $stmt = $database->prepare($sqlmain);
+        //     $stmt->bind_param("s", $spe);
+        //     $stmt->execute();
+        //     $spcil_res = $stmt->get_result();
+        //     $spcil_array = $spcil_res->fetch_assoc();
+        //     $spcil_name = $spcil_array["sname"];
+        //     $nic = $row['docnic'];
+        //     $tele = $row['doctel'];
+        //     echo '
+        //     <div id="popup1" class="overlay">
+        //             <div class="popup">
+        //             <center>
+        //                 <h2></h2>
+        //                 <a class="close" href="doctors.php">&times;</a>
+        //                 <div class="content">
+        //                     eDoc Web App<br>
+    
+        //                 </div>
+        //                 <div style="display: flex;justify-content: center;">
+        //                 <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
+    
+        //                     <tr>
+        //                         <td>
+        //                             <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">View Details.</p><br><br>
+        //                         </td>
+        //                     </tr>
+    
+        //                     <tr>
+    
+        //                         <td class="label-td" colspan="2">
+        //                             <label for="name" class="form-label">Name: </label>
+        //                         </td>
+        //                     </tr>
+        //                     <tr>
+        //                         <td class="label-td" colspan="2">
+        //                             ' . $name . '<br><br>
+        //                         </td>
+    
+        //                     </tr>
+        //                     <tr>
+        //                         <td class="label-td" colspan="2">
+        //                             <label for="Email" class="form-label">Email: </label>
+        //                         </td>
+        //                     </tr>
+        //                     <tr>
+        //                         <td class="label-td" colspan="2">
+        //                         ' . $email . '<br><br>
+        //                         </td>
+        //                     </tr>
+        //                     <tr>
+        //                         <td class="label-td" colspan="2">
+        //                             <label for="nic" class="form-label">NIC: </label>
+        //                         </td>
+        //                     </tr>
+        //                     <tr>
+        //                         <td class="label-td" colspan="2">
+        //                         ' . $nic . '<br><br>
+        //                         </td>
+        //                     </tr>
+        //                     <tr>
+        //                         <td class="label-td" colspan="2">
+        //                             <label for="Tele" class="form-label">Telephone: </label>
+        //                         </td>
+        //                     </tr>
+        //                     <tr>
+        //                         <td class="label-td" colspan="2">
+        //                         ' . $tele . '<br><br>
+        //                         </td>
+        //                     </tr>
+        //                     <tr>
+        //                         <td class="label-td" colspan="2">
+        //                             <label for="spec" class="form-label">Specialties: </label>
+    
+        //                         </td>
+        //                     </tr>
+        //                     <tr>
+        //                     <td class="label-td" colspan="2">
+        //                     ' . $spcil_name . '<br><br>
+        //                     </td>
+        //                     </tr>
+        //                     <tr>
+        //                         <td colspan="2">
+        //                             <a href="doctors.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
+    
+
+        //                         </td>
+    
+        //                     </tr>
+    
+
+        //                 </table>
+        //                 </div>
+        //             </center>
+        //             <br><br>
+        //     </div>
+        //     </div>
+        //     ';
+        // }
     }
 
     ?>

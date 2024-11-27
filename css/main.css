@@ -1,9 +1,11 @@
 @import url("font-inter.css");
 :root {
-  --primarycolor: #2d3663;
-  --primarycolorhover: #006dd3;
-  --btnice: #d8ebfa;
-  --btnnicetext: #1b62b3;
+  --primary-color: #2d3663;
+  --secondary-color: #0ebad2;
+  /* --primary-color: #0ebad2; */
+  /* --secondary-color: #2d3663; */
+  --btnice: aliceblue;
+  --btnnicetext: #2d3663;
 }
 
 body {
@@ -95,7 +97,7 @@ a {
 }
 
 .input-text:focus {
-  border: 1px solid rgb(10, 118, 216);
+  border: 1px solid var(--secondary-color);
   transition: 0.2s;
 }
 
@@ -114,37 +116,37 @@ a {
   transition: all 0.3s;
   border-radius: 5px;
   font-family: "Inter", sans-serif;
+  font-weight: 500;
 }
 
 .btn:hover {
-  background-color: var(--primarycolorhover);
-  box-shadow: none;
+  background-color: rgb(255, 255, 255);
+  color: var(--primary-color);
   transition: all 0.5s;
   font-family: "Inter", sans-serif;
 }
 
 .btn-primary {
-  background-color: var(--primarycolor);
-  border: 1px solid var(--primarycolor);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   color: #fff;
-  box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary-soft {
-  background-color: #d8ebfa;
-  /*border: 1px solid rgba(57,108,240,0.1) ;*/
-  color: #1969aa;
+  background-color: #ffffff;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
   font-weight: 500;
   font-size: 16px;
-  border: none;
-  /*box-shadow: 0 3px 5px 0 rgba(57,108,240,0.3)*/
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary-soft:hover {
-  background-color: var(--primarycolor);
+  background-color: var(--primary-color);
   /*border: 1px solid rgba(57,108,240,0.1) ;*/
   color: #fff;
-  box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .btn-in-text {
@@ -196,12 +198,11 @@ a {
   font-size: 16px;
   font-weight: 500;
   padding: 10px;
-  border-bottom: 3px solid var(--primarycolor);
+  border-bottom: 3px solid var(--primary-color);
 }
 
 .abc {
   width: 100%;
-  height: 550px;
   overflow: auto;
 }
 
@@ -245,7 +246,7 @@ a {
   color: #333;
 }
 .popup .close:hover {
-  color: var(--primarycolorhover);
+  color: var(--secondary-color);
 }
 .popup .content {
   max-height: 30%;
@@ -311,10 +312,15 @@ input[type="search"]:focus {
 
 .menu-btn {
   padding: 6px;
-  color: #3b3b3b;
+  color: rgb(255, 255, 255);
   background-position: 30% 50%;
   background-repeat: no-repeat;
   transition: 0.5s;
+}
+
+.menu-btn:hover {
+  background-color: rgb(255, 255, 255);
+  color: var(--primary-color);
 }
 
 .menu-text {
@@ -323,112 +329,102 @@ input[type="search"]:focus {
   font-size: 16px;
 }
 
-.menu-active {
-  color: var(--primarycolor);
-  border-right: 7px solid var(--primarycolor);
-  background-color: var();
+/* .menu-active {
+  color: rgb(255, 255, 255);
+  border-right: 7px solid rgb(0, 0, 0);
+} */
+
+.menu-btn a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.menu-btn:hover {
-  background-color: var(--btnice);
-  color: var(--primarycolor);
-}
-
-.non-style-link-menu:link,
+/* .non-style-link-menu:link,
 .non-style-link-menu:visited,
 .non-style-link-menu:active {
   text-decoration: none;
-  color: #3b3b3b;
+  color: #ffffff;
 }
 .non-style-link-menu:hover {
   text-decoration: none;
-  color: var(--primarycolor);
+  color: var(--primary-color);
 }
 
 .non-style-link-menu-active:link,
 .non-style-link-menu-active:visited,
 .non-style-link-menu-active:active {
   text-decoration: none;
-  color: var(--primarycolor);
-}
+  color: var(--primary-color);
+} */
 
-.menu-icon-dashbord {
-  background-image: url("../img/icons/dashboard.svg");
-}
-
-.menu-icon-doctor {
-  background-image: url("../img/icons/doctors.svg");
+/* .menu-icon-doctor {
+  background-image: url("../img/icons/doctor.png");
 }
 .menu-icon-schedule {
-  background-image: url("../img/icons/schedule.svg");
+  background-image: url("../img/icons/tooth.png");
 }
 .menu-icon-appoinment {
-  background-image: url("../img/icons/book.svg");
+  background-image: url("../img/icons/calendar.png");
 }
 .menu-icon-patient {
   background-image: url("../img/icons/patients.svg");
 }
 .menu-icon-settings {
-  background-image: url("../img/icons/settings.svg");
+  background-image: url("../img/icons/settings.png");
 }
 
 .menu-icon-session {
   background-image: url("../img/icons/session.svg");
 }
 .menu-icon-home {
-  background-image: url("../img/icons/home.svg");
-}
-
-.menu-icon-dashbord:hover,
-.menu-icon-dashbord-active {
-  color: var(--primarycolor);
-
-  background-image: url("../img/icons/dashboard-hover.svg");
+  color: #fff;
+  background-image: url("../img/icons/123.svg");
 }
 
 .menu-icon-doctor:hover,
 .menu-icon-doctor-active {
-  color: var(--primarycolor);
+  color: var(--primary-color);
   background-image: url("../img/icons/doctors-hover.svg");
 }
 .menu-icon-schedule:hover,
 .menu-icon-schedule-active {
-  color: var(--primarycolor);
+  color: var(--primary-color);
 
   background-image: url("../img/icons/schedule-hover.svg");
 }
 .menu-icon-appoinment:hover,
 .menu-icon-appoinment-active {
-  color: var(--primarycolor);
+  color: var(--primary-color);
 
   background-image: url("../img/icons/book-hover.svg");
 }
 .menu-icon-patient:hover,
 .menu-icon-patient-active {
-  color: var(--primarycolor);
+  color: var(--primary-color);
 
   background-image: url("../img/icons/patients-hover.svg");
 }
 
 .menu-icon-settings:hover,
 .menu-icon-settings-active {
-  color: var(--primarycolor);
+  color: var(--primary-color);
 
   background-image: url("../img/icons/settings-iceblue.svg");
 }
 
 .menu-icon-session:hover,
 .menu-icon-session-active {
-  color: var(--primarycolor);
+  color: var(--primary-color);
 
   background-image: url("../img/icons/session-iceblue.svg");
 }
+
 .menu-icon-home:hover,
 .menu-icon-home-active {
-  color: var(--primarycolor);
+  color: var(--primary-color);
 
   background-image: url("../img/icons/home-iceblue.svg");
-}
+} */
 
 .btn-icon-back {
   background-image: url("../img/icons/back-iceblue.svg");
@@ -474,7 +470,7 @@ input[type="search"]:focus {
 .dashboard-items {
   border: 2px solid #c9cbce9f;
   border-radius: 7px;
-  color: var(--primarycolor);
+  color: var(--primary-color);
   /*background-color: #d8ebfa25 ;*/
   /*box-shadow: 0 3px 5px 0 rgba(95, 95, 97, 0.3);*/
 }

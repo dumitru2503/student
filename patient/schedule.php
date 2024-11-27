@@ -42,138 +42,31 @@
 
     $today = date('Y-m-d');
 
+    $search_term = "";
+    if (isset($_GET["search"])) {
+        $search_term = $_GET["search"];
+    }
 
     ?>
     <div class="container">
-        <div class="menu">
-            <table class="menu-container" border="0">
-                <tr>
-                    <td style="padding:10px" colspan="2">
-                        <table border="0" class="profile-container">
-                            <tr>
-                                <td width="30%" style="padding-left:20px">
-                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
-                                </td>
-                                <td style="padding:0px;margin:0px;">
-                                    <p class="profile-title"><?php echo substr($user_name, 0, 13) ?></p>
-                                    <p class="profile-subtitle"><?php echo substr($user_email, 0, 22) ?></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a href="../logout.php"><input type="button" value="Deconectare"
-                                            class="logout-btn btn-primary-soft btn"></a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-home menu-active menu-icon-home-active">
-                        <a href="index.php" class="non-style-link-menu non-style-link-menu-active">
-                            <div>
-                                <p class="menu-text">Acasă</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-doctor">
-                        <a href="doctors.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Toți medicii</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-session">
-                        <a href="schedule.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Servicii</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-appoinment">
-                        <a href="appointment.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Programările mele</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-settings">
-                        <a href="settings.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Setări</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-
-            </table>
-        </div>
-        <?php
-
-        $sqlpt1 = "";
-        $insertkey = "";
-        $q = '';
-        $searchtype = "All";
-
-        if ($_POST) {
-            //print_r($_POST);
-        
-            if (!empty($_POST["search"])) {
-                /*TODO: make and understand */
-                $keyword = $_POST["search"];
-                $sqlmain = "select * from schedule inner join doctor on schedule.docid=doctor.docid where schedule.scheduledate>='$today' and (doctor.docname='$keyword' or doctor.docname like '$keyword%' or doctor.docname like '%$keyword' or doctor.docname like '%$keyword%' or schedule.title='$keyword' or schedule.title like '$keyword%' or schedule.title like '%$keyword' or schedule.title like '%$keyword%' or schedule.scheduledate like '$keyword%' or schedule.scheduledate like '%$keyword' or schedule.scheduledate like '%$keyword%' or schedule.scheduledate='$keyword' )  order by schedule.scheduledate asc";
-                //echo $sqlmain;
-                $insertkey = $keyword;
-                $searchtype = "Search Result : ";
-                $q = '"';
-            }
-
-        }
-        ?>
+        <?php require_once './includes/menu.php' ?>
 
         <div class="dash-body">
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
-                <tr>
+                <tr class="header">
                     <td width="13%">
                         <a href="schedule.php"><button class="login-btn btn-primary-soft btn btn-icon-back"
                                 style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                                <font class="tn-in-text">Back</font>
+                                <font class="tn-in-text">Inapoi</font>
                             </button></a>
                     </td>
                     <td>
-                        <form action="" method="post" class="header-search">
+                        <form action="./schedule.php" method="GET" class="header-search">
 
                             <input type="search" name="search" class="input-text header-searchbar"
-                                placeholder="Search Doctor name or Email or Date (YYYY-MM-DD)" list="doctors"
-                                value="<?php echo $insertkey ?>">&nbsp;&nbsp;
+                                placeholder="Cautare serviciu" value="<?php echo $search_term ?>">&nbsp;&nbsp;
 
-                            <?php
-                            echo '<datalist id="services">';
-                            $list12 = $database->query("SELECT * FROM services GROUP BY name;");
-
-
-                            for ($y = 0; $y < $list12->num_rows; $y++) {
-                                $row00 = $list12->fetch_assoc();
-                                $d = $row00["name"];
-
-                                echo "<option value='$d'><br/>";
-                            }
-                            ;
-
-                            echo ' </datalist>';
-                            ?>
-
-
-                            <input type="Submit" value="Search" class="login-btn btn-primary btn"
+                            <input type="Submit" value="Cautare" class="login-btn btn-primary btn"
                                 style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
                         </form>
                     </td>
@@ -182,14 +75,7 @@
                             Today's Date
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
-                            <?php
-
-
-                            echo $today;
-
-
-
-                            ?>
+                            <?php echo $today; ?>
                         </p>
                     </td>
                     <td width="10%">
@@ -197,8 +83,6 @@
                             style="display: flex;justify-content: center;align-items: center;"><img
                                 src="../img/calendar.svg" width="100%"></button>
                     </td>
-
-
                 </tr>
 
 
@@ -208,7 +92,7 @@
                             Servicii
                         </p>
                         <p class="heading-main12" style="margin-left: 45px;font-size:22px;color:rgb(49, 49, 49)">
-                            <?php echo $q . $insertkey . $q; ?>
+                            <?php echo strlen($search_term) != 0 ? "'$search_term'" : ""; ?>
                         </p>
                     </td>
 
@@ -227,8 +111,12 @@
 
                                         <?php
 
-                                        $sqlmain = "SELECT * FROM services";
-                                        $result = $database->query($sqlmain);
+                                        $stmt = $database->prepare("SELECT * FROM services WHERE name LIKE ?");
+                                        $search_pattern = "%" . $search_term . "%";
+                                        $stmt->bind_param("s", $search_pattern);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+
 
 
                                         if ($result->num_rows == 0) {

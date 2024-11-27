@@ -47,78 +47,7 @@
 
     ?>
     <div class="container">
-        <div class="menu">
-            <table class="menu-container" border="0">
-                <tr>
-                    <td style="padding:10px" colspan="2">
-                        <table border="0" class="profile-container">
-                            <tr>
-                                <td width="30%" style="padding-left:20px">
-                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
-                                </td>
-                                <td style="padding:0px;margin:0px;">
-                                    <p class="profile-title"><?php echo substr($user_name, 0, 13) ?></p>
-                                    <p class="profile-subtitle"><?php echo substr($user_email, 0, 22) ?></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a href="../logout.php"><input type="button" value="Deconectare"
-                                            class="logout-btn btn-primary-soft btn"></a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-home menu-active menu-icon-home-active">
-                        <a href="index.php" class="non-style-link-menu non-style-link-menu-active">
-                            <div>
-                                <p class="menu-text">Acasă</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-doctor">
-                        <a href="doctors.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Toți medicii</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-session">
-                        <a href="schedule.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Servicii</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-appoinment">
-                        <a href="appointment.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Programările mele</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-settings">
-                        <a href="settings.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Setări</p>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-
-            </table>
-        </div>
+        <?php require_once './includes/menu.php' ?>
 
         <div class="dash-body">
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
@@ -211,7 +140,7 @@
 
                                                 $id = $_GET["id"];
 
-                                                $sqlmain = "SELECT s.id AS service_id, s.name AS service_name, u.name AS doctor_name, u.email AS doctor_email
+                                                $sqlmain = "SELECT s.id AS service_id, s.name AS service_name, u.name AS doctor_name, u.id AS doctor_id
                                                 FROM doctor_services AS ds
                                                 INNER JOIN services AS s ON ds.service_id = s.id
                                                 INNER JOIN users AS u ON ds.doctor_id = u.id
@@ -226,11 +155,13 @@
 
                                                 $service_id = $row["service_id"];
                                                 $service_name = $row["service_name"];
+                                                $doctor_id = $row["doctor_id"];
                                                 $doctor_name = $row["doctor_name"];
-                                                $doctor_email = $row["doctor_email"];
 
 
-                                                ?>
+                                        ?>      
+                                                <form action="booking-complete.php" method="post">
+
                                                 <tr>
                                                     <td>
                                                         <div class="dashboard-items search-items">
@@ -241,40 +172,36 @@
                                                                     <?php echo $service_name; ?>
                                                                 </div><br>
 
-                                                                <div class="h3-search" style="font-size:18px;">
+                                                                <input type="hidden" name="service_id"
+                                                                    value="<?php echo $service_id; ?>">
 
-                                                                </div>
+                                                                <label for="doctor">Doctor:</label>
+                                                                <select class="input-text filter-container-items" name="doctor_id"
+                                                                    style="margin: 0;width: 95%;">
+                                                                    <option value=<?php echo $doctor_id ?>><?php echo $doctor_name ?></option>
+                                                                    <?php
+                                                                    while ($row = $result->fetch_assoc()) {
+                                                                        echo "<option value=" . $row["doctor_id"] . ">" . $row["doctor_name"] . "</option>";
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                                <br>
 
+                                                                <label for="date">Data:</label>
+                                                                <input type="date" name="date" 
+                                                                    value=<?php echo '"' . $today . '"' ?>
+                                                                    min=<?php echo '"' . $today . '"' ?>
+                                                                    class="input-text filter-container-items"
+                                                                    style="margin: 0;width: 95%;">
+                                                                <br>
 
-                                                                <form action="booking-complete.php" method="post">
-                                                                    <input type="hidden" name="scheduleid"
-                                                                        value="<?php echo $service_id; ?>">
-
-                                                                    <label for="doctor">Doctor:</label>
-                                                                    <select class="input-text filter-container-items"
-                                                                        style="margin: 0;width: 95%;" name="time" id="time">
-                                                                        <option value="09:00">Doc1</option>
-                                                                        <option value="10:00">Doc2</option>
-                                                                        <option value="11:00">Doc3</option>
-                                                                    </select>
-                                                                    <br>
-
-                                                                    <label for="date">Data:</label>
-                                                                    <input type="date" name="sheduledate" id="date" 
-                                                                        value=<?php echo '"' . $today . '"' ?>
-                                                                        min=<?php echo '"' . $today . '"' ?>
-                                                                        class="input-text filter-container-items"
-                                                                        style="margin: 0;width: 95%;">
-                                                                    <br>
-
-                                                                    <label for="time">Ora:</label>
-                                                                    <select class="input-text filter-container-items"
-                                                                        style="margin: 0;width: 95%;" name="time" id="time">
-                                                                        <option value="09:00">09:00</option>
-                                                                        <option value="10:00" disabled>10:00</option>
-                                                                        <option value="11:00">11:00</option>
-                                                                    </select>
-                                                                </form>
+                                                                <label for="time">Ora:</label>
+                                                                <select class="input-text filter-container-items"
+                                                                    style="margin: 0;width: 95%;" name="time" id="time">
+                                                                    <option value="09:00">09:00</option>
+                                                                    <option value="10:00" disabled>10:00</option>
+                                                                    <option value="11:00">11:00</option>
+                                                                </select>
                                                                 <br>
 
                                                                 <div class="h3-search" style="font-size:18px;">
@@ -292,9 +219,10 @@
                                                     <td>
                                                         <input type="Submit" class="login-btn btn-primary btn btn-book"
                                                             style="margin-left:10px;padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;width:95%;text-align: center;"
-                                                            value="Programeaza" name="booknow"></button>
+                                                            value="Programeaza" name="booknow"></input>
                                                     </td>
                                                 </tr>
+                                                </form>
                                                 <?php
                                             }
                                         }

@@ -22,8 +22,8 @@
       </td>
     </tr>
     <tr class="menu-row">
-      <td class="menu-btn menu-icon-home menu-active menu-icon-home-active">
-        <a href="index.php" class="non-style-link-menu non-style-link-menu-active">
+      <td class="menu-btn menu-icon-home menu-active">
+        <a href="index.php">
           <div>
             <p class="menu-text">Acasă</p>
           </div>
@@ -32,7 +32,7 @@
     </tr>
     <tr class="menu-row">
       <td class="menu-btn menu-icon-doctor">
-        <a href="doctors.php" class="non-style-link-menu">
+        <a href="doctors.php">
           <div>
             <p class="menu-text">Toți medicii</p>
           </div>
@@ -42,7 +42,7 @@
 
     <tr class="menu-row">
       <td class="menu-btn menu-icon-session">
-        <a href="schedule.php" class="non-style-link-menu">
+        <a href="schedule.php">
           <div>
             <p class="menu-text">Servicii</p>
           </div>
@@ -51,7 +51,7 @@
     </tr>
     <tr class="menu-row">
       <td class="menu-btn menu-icon-appoinment">
-        <a href="appointment.php" class="non-style-link-menu">
+        <a href="appointment.php">
           <div>
             <p class="menu-text">Programările mele</p>
           </div>
@@ -60,7 +60,7 @@
     </tr>
     <tr class="menu-row">
       <td class="menu-btn menu-icon-settings">
-        <a href="settings.php" class="non-style-link-menu">
+        <a href="settings.php">
           <div>
             <p class="menu-text">Setări</p>
           </div>
