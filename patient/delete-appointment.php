@@ -15,10 +15,20 @@ include("../connection.php");
 if (isset($_GET["id"])) {
 
     $id = $_GET["id"];
-    $sqlmain = "DELETE FROM appointment WHERE id = ?";
+
+    $sqlmain = "SELECT * FROM appointment WHERE id = ?";
     $stmt = $database->prepare($sqlmain);
     $stmt->bind_param("i", $id);
     $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    if ($row["patient_id"] == $user_id) {
+        $sqlmain = "DELETE FROM appointment WHERE id = ?";
+        $stmt = $database->prepare($sqlmain);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+    }
 
     header("location: appointment.php");
 }

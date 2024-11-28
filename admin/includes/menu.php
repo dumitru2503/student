@@ -34,26 +34,16 @@
       <td class="menu-btn menu-icon-doctor">
         <a href="doctors.php">
           <div>
-            <p class="menu-text">Toți medicii</p>
+            <p class="menu-text">Medici</p>
           </div>
         </a>
       </td>
     </tr>
-
     <tr class="menu-row">
-      <td class="menu-btn menu-icon-session">
+      <td class="menu-btn menu-icon-schedule">
         <a href="schedule.php">
           <div>
             <p class="menu-text">Servicii</p>
-          </div>
-        </a>
-      </td>
-    </tr>
-    <tr class="menu-row">
-      <td class="menu-btn menu-icon-appoinment">
-        <a href="appointment.php">
-          <div>
-            <p class="menu-text">Programările mele</p>
           </div>
         </a>
       </td>

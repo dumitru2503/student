@@ -181,6 +181,10 @@ a {
   border-radius: 8px;
 }
 
+.doctors-table tr {
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
 .filter-container {
   width: 92.5%;
   border: 1px solid #ebebeb;

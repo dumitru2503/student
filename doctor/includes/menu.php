@@ -31,29 +31,29 @@
       </td>
     </tr>
     <tr class="menu-row">
-      <td class="menu-btn menu-icon-doctor">
-        <a href="doctors.php">
+      <td class="menu-btn menu-icon-appoinment">
+        <a href="appointment.php">
           <div>
-            <p class="menu-text">Toți medicii</p>
+            <p class="menu-text">Programari</p>
           </div>
         </a>
       </td>
     </tr>
 
-    <tr class="menu-row">
-      <td class="menu-btn menu-icon-session">
-        <a href="schedule.php">
+    <!-- <tr class="menu-row">
+      <td class="menu-btn menu-icon-patient">
+        <a href="patient.php">
           <div>
-            <p class="menu-text">Servicii</p>
+            <p class="menu-text">Pacienti</p>
           </div>
         </a>
       </td>
-    </tr>
+    </tr> -->
     <tr class="menu-row">
-      <td class="menu-btn menu-icon-appoinment">
-        <a href="appointment.php">
+      <td class="menu-btn menu-icon-schedule">
+        <a href="schedule.php">
           <div>
-            <p class="menu-text">Programările mele</p>
+            <p class="menu-text">Orar</p>
           </div>
         </a>
       </td>

@@ -24,8 +24,6 @@
 <body>
     <?php
 
-    //learn from w3schools.com
-    
     session_start();
 
     if (isset($_SESSION["user"])) {

@@ -1,28 +1,37 @@
 <?php
 
-    session_start();
+session_start();
 
-    if(isset($_SESSION["user"])){
-        if(($_SESSION["user"])=="" or $_SESSION['usertype']!='a'){
-            header("location: ../login.php");
-        }
+if (isset($_SESSION["user_email"]) && $_SESSION["user_email"] != "" && $_SESSION['user_type'] == 'd') {
+    $user_id = $_SESSION['user_id'];
+    $user_email = $_SESSION["user_email"];
+    $user_name = $_SESSION['user_name'];
+} else {
+    header("location: ../login.php");
+}
 
-    }else{
-        header("location: ../login.php");
+include("../connection.php");
+
+if (isset($_GET["id"])) {
+
+    $id = $_GET["id"];
+
+    $sqlmain = "SELECT * FROM appointment WHERE id = ?";
+    $stmt = $database->prepare($sqlmain);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    if ($row["doctor_id"] == $user_id) {
+        $sqlmain = "DELETE FROM appointment WHERE id = ?";
+        $stmt = $database->prepare($sqlmain);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
     }
-    
-    
-    if($_GET){
-        //import database
-        include("../connection.php");
-        $id=$_GET["id"];
-        //$result001= $database->query("select * from schedule where scheduleid=$id;");
-        //$email=($result001->fetch_assoc())["docemail"];
-        $sql= $database->query("delete from appointment where appoid='$id';");
-        //$sql= $database->query("delete from doctor where docemail='$email';");
-        //print_r($email);
-        header("location: appointment.php");
-    }
+
+    header("location: appointment.php");
+}
 
 
 ?>
