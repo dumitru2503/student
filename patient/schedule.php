@@ -159,13 +159,14 @@
                                                     <div style="width:100%">
                                                             <a href="booking.php?id=' . $service_id . '" >
                                                                 <div class="service-container">
-                                                                    <img src="../img/service2.png">
+                                                                    <img src="../img/service1.png">
                                                                     <br>
                                                                     <div class="h3-search">
                                                                         ' . substr($service_name, 0, 21) . '
                                                                     </div>
                                                                 </div>
                                                             </a>
+                                                            
                                                     </div>
                                                             
                                                 </div>
