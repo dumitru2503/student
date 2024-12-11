@@ -40,7 +40,12 @@
 
     include("../connection.php");
 
-    $doctors = $database->query("SELECT * FROM users WHERE type = 'd'");
+    $type_doctor = "d";
+    $stmt = $database->prepare("SELECT * FROM users WHERE type = ?");
+    $stmt->bind_param("s", $type_doctor);
+    $stmt->execute();
+    $doctors = $stmt->get_result();
+
 
     ?>
     <div class="container">
@@ -170,10 +175,15 @@
                                                 $doctor_name = $doctor["name"];
                                                 $doctor_email = $doctor["email"];
 
-                                                $services = $database->query("SELECT s.name AS service_name 
-                                                FROM doctor_services AS ds
-                                                INNER JOIN services AS s ON ds.service_id = s.id 
-                                                WHERE doctor_id = '$doctor_id'");
+                                                // Using prepared statement with bound parameters
+                                                $stmt = $database->prepare("SELECT s.name AS service_name 
+                                                                            FROM doctor_services AS ds
+                                                                            INNER JOIN services AS s ON ds.service_id = s.id 
+                                                                            WHERE doctor_id = ?");
+                                                $stmt->bind_param("i", $doctor_id); // Assuming doctor_id is an integer
+                                                $stmt->execute();
+                                                $services = $stmt->get_result();
+
 
                                                 ?>
 

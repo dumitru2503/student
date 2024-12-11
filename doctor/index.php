@@ -52,14 +52,22 @@
 
     include("../connection.php");
 
-    $today_appointments = $database->query("SELECT * FROM  appointment WHERE doctor_id = '$user_id' AND date = '$today';");
+    $stmt1 = $database->prepare("SELECT * FROM appointment WHERE doctor_id = ? AND date = ?");
+    $stmt1->bind_param("ss", $user_id, $today);
+    $stmt1->execute();
+    $today_appointments = $stmt1->get_result();
     $today_appointments_count = $today_appointments->num_rows;
-    $appointments = $database->query("SELECT s.name AS service_name, u.name AS patient_name, a.date AS date, a.time AS time
-    FROM  appointment AS a 
-    INNER JOIN services AS s ON a.service_id = s.id
-    INNER JOIN users AS u ON a.patient_id = u.id
-    WHERE a.doctor_id = '$user_id' LIMIT 5;");
+
+    $stmt2 = $database->prepare("SELECT s.name AS service_name, u.name AS patient_name, a.date AS date, a.time AS time
+                              FROM appointment AS a
+                              INNER JOIN services AS s ON a.service_id = s.id
+                              INNER JOIN users AS u ON a.patient_id = u.id
+                              WHERE a.doctor_id = ? LIMIT 5;");
+    $stmt2->bind_param("s", $user_id);
+    $stmt2->execute();
+    $appointments = $stmt2->get_result();
     $appointments_count = $appointments->num_rows;
+
 
     ?>
     <div class="container">

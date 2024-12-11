@@ -28,9 +28,11 @@ if ($_POST) {
         $date = $_POST["date"];
         $time = $_POST["time"];
 
-        $sql = "INSERT INTO appointment(patient_id,doctor_id,service_id,date,time)
-        VALUES ('$user_id','$doctor_id','$service_id','$date','$time')";
-        $result = $database->query($sql);
+        $sql = "INSERT INTO appointment(patient_id, doctor_id, service_id, date, time)
+                VALUES (?, ?, ?, ?, ?)";
+        $stmt = $database->prepare($sql);
+        $stmt->bind_param("sssss", $user_id, $doctor_id, $service_id, $date, $time);
+        $stmt->execute();
         header("location: appointment.php?action=booking-added");
     }
 }
