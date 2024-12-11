@@ -46,6 +46,7 @@
         $phone = $_POST['phone'];
         $password = $_POST['password'];
         $cpassword = $_POST['cpassword'];
+        $type = 'p';
 
         if ($password == $cpassword) {
             $sqlmain = "select * from users where email=?;";
@@ -56,10 +57,12 @@
             if ($result->num_rows == 1) {
                 $error = '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Există deja un cont asociat cu această adresă de email.</label>';
             } else {
-                $database->query("insert into users(email,name,password,phone,type) values('$email','$name','$password','$phone','p');");
+                $stmt = $database->prepare("insert into users(email,name,password,phone,type) values(?, ?, ?, ?, ?);");
+                $stmt->bind_param("sssss", $email, $name, $password, $phone, $type);
+                $stmt->execute();
 
                 $_SESSION["user_email"] = $email;
-                $_SESSION["user_type"] = "p";
+                $_SESSION["user_type"] = $type;
                 $_SESSION["user_name"] = $name;
 
                 header('Location: patient/index.php');

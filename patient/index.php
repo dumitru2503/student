@@ -166,12 +166,14 @@
                                         <?php
                                         $nextweek = date("Y-m-d", strtotime("+1 week"));
                                         $sqlmain = "SELECT users.name AS doctor_name, services.name AS service_name, appointment.date, appointment.time
-                                FROM appointment
-                                INNER JOIN services ON appointment.service_id = services.id
-                                INNER JOIN users ON appointment.doctor_id = users.id
-                                WHERE appointment.patient_id = '$user_id'";
-
-                                        $result = $database->query($sqlmain);
+                                                    FROM appointment
+                                                    INNER JOIN services ON appointment.service_id = services.id
+                                                    INNER JOIN users ON appointment.doctor_id = users.id
+                                                    WHERE appointment.patient_id = ?";
+                                        $result = $database->prepare($sqlmain);
+                                        $result->bind_param("s", $user_id);
+                                        $result->execute();
+                                        $result = $result->get_result();
 
                                         if ($result->num_rows == 0) {
                                             echo '<tr>
