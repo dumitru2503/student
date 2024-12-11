@@ -46,10 +46,22 @@
 
     include("../connection.php");
 
-    $doctors = $database->query("SELECT * FROM users WHERE type = 'd'");
-    $patients = $database->query("SELECT * FROM users WHERE type = 'p'");
+    $type_doctor = 'd';
+    $type_patient = 'p';
+
+    $stmt1 = $database->prepare("SELECT * FROM users WHERE type = ?");
+    $stmt1->bind_param("s", $type_doctor);
+    $stmt1->execute();
+    $doctors = $stmt1->get_result();
+
+    $stmt2 = $database->prepare("SELECT * FROM users WHERE type = ?");
+    $stmt2->bind_param("s", $type_patient);
+    $stmt2->execute();
+    $patients = $stmt2->get_result();
+
     $appointments = $database->query("SELECT * FROM appointment");
     $services = $database->query("SELECT * FROM services");
+
 
     ?>
     <div class="container">

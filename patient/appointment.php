@@ -39,17 +39,6 @@
     include("../connection.php");
 
 
-    if ($_POST) {
-
-        if (!empty($_POST["sheduledate"])) {
-            $sheduledate = $_POST["sheduledate"];
-            $sqlmain .= " and schedule.scheduledate='$sheduledate' ";
-        }
-        ;
-
-    }
-
-
     ?>
     <div class="container">
         <?php require_once './includes/menu.php' ?>
@@ -103,13 +92,15 @@
 
                 <?php
                 $sqlmain = "SELECT appointment.id AS appointment_id, users.name AS doctor_name, services.name AS service_name, appointment.date, appointment.time
-            FROM appointment
-            INNER JOIN services ON appointment.service_id = services.id
-            INNER JOIN users ON appointment.doctor_id = users.id
-            WHERE appointment.patient_id = '$user_id'";
-
-                $sqlmain .= "order by appointment.date asc";
-                $result = $database->query($sqlmain);
+                FROM appointment
+                INNER JOIN services ON appointment.service_id = services.id
+                INNER JOIN users ON appointment.doctor_id = users.id
+                WHERE appointment.patient_id = ?
+                ORDER BY appointment.date ASC";
+                $result = $database->prepare($sqlmain);
+                $result->bind_param("s", $user_id);
+                $result->execute();
+                $result = $result->get_result();
                 ?>
 
                 <tr>

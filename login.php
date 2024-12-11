@@ -34,7 +34,10 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $result = $database->query("select * from users where email='$email'");
+        $result = $database->prepare("SELECT * FROM users WHERE email = ?");
+        $result->bind_param("s", $email);
+        $result->execute();
+        $result = $result->get_result();
         if ($result->num_rows == 1) {
             $user = $result->fetch_assoc();
             $user_type = $user['type'];

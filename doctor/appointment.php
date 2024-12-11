@@ -42,19 +42,26 @@
     include("../connection.php");
 
     $sql1 = "SELECT a.id AS appointment_id, s.name AS service_name, u.name AS patient_name, a.date AS date, a.time AS time
-    FROM  appointment AS a 
-    INNER JOIN services AS s ON a.service_id = s.id
-    INNER JOIN users AS u ON a.patient_id = u.id
-    WHERE a.doctor_id = '$user_id' AND ((date = '$today' AND time > '$time_now') OR (date > '$today'));";
+         FROM appointment AS a
+         INNER JOIN services AS s ON a.service_id = s.id
+         INNER JOIN users AS u ON a.patient_id = u.id
+         WHERE a.doctor_id = ? AND ((a.date = ? AND a.time > ?) OR (a.date > ?));";
 
-    $future_appointments = $database->query($sql1);
+    $stmt1 = $database->prepare($sql1);
+    $stmt1->bind_param("ssss", $user_id, $today, $time_now, $today);
+    $stmt1->execute();
+    $future_appointments = $stmt1->get_result();
 
     $sql2 = "SELECT a.id AS appointment_id, s.name AS service_name, u.name AS patient_name, a.date AS date, a.time AS time
-    FROM  appointment AS a 
-    INNER JOIN services AS s ON a.service_id = s.id
-    INNER JOIN users AS u ON a.patient_id = u.id
-    WHERE a.doctor_id = '$user_id' AND ((date = '$today' AND time <= '$time_now') OR (date < '$today'));";
-    $past_appointments = $database->query($sql2);
+         FROM appointment AS a
+         INNER JOIN services AS s ON a.service_id = s.id
+         INNER JOIN users AS u ON a.patient_id = u.id
+         WHERE a.doctor_id = ? AND ((a.date = ? AND a.time <= ?) OR (a.date < ?));";
+
+    $stmt2 = $database->prepare($sql2);
+    $stmt2->bind_param("ssss", $user_id, $today, $time_now, $today);
+    $stmt2->execute();
+    $past_appointments = $stmt2->get_result();
 
     ?>
     <div class="container">
