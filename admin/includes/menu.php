@@ -52,7 +52,8 @@
       <td class="menu-btn menu-icon-settings">
         <a href="settings.php">
           <div>
-            <p class="menu-text">Setări</p>
+            <p class="menu-text">
+            Setări</p>
           </div>
         </a>
       </td>

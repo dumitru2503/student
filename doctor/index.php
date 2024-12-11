@@ -69,14 +69,14 @@
 
                 <tr>
 
-                    <td colspan="1" class="nav-bar">
-                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;margin-left:20px;"> Dashboard</p>
-
+                    <td colspan="1" class="nav-bar">   
+                    <p style="font-size: 23px;color:#ffffff;border-radius: 40px; padding-left: 50px;padding-right: 300px; font-weight: 600; margin-left: 20px;padding-top: 30px;padding-bottom: 30px; border: 1px solid; background-color: #2d3663;">Profile</p>
+                    
                     </td>
                     <td width="25%">
 
                     </td>
-                    <td width="15%">
+                    <td width="15% ">
                         <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
                             Today's Date
                         </p>
@@ -94,10 +94,10 @@
                     <td colspan="4">
 
                         <center>
-                            <table class="filter-container doctor-header" style="border: none;width:95%" border="0">
+                            <table class="filter-container doctor-header" style="border: none;margin-top:30px;width:95%" border="0">
                                 <tr>
-                                    <td>
-                                        <h3>Welcome!</h3>
+                                    <td style="background-color: #b9c9e6; padding-left: 30px; border-radius: 40px">
+                                        <h3>Welcome back!</h3>
                                         <h1><?php echo $user_name ?>.</h1>
                                         <p>Thanks for joinnig with us. We are always trying to get you a complete
                                             service<br>
@@ -105,7 +105,7 @@
                                             home!<br><br>
                                         </p>
                                         <a href="appointment.php" class="non-style-link"><button class="btn-primary btn"
-                                                style="width:30%">View My Appointments</button></a>
+                                                style="width:30%;border-radius:40px">View My Appointments</button></a>
                                         <br>
                                         <br>
                                     </td>
@@ -205,7 +205,7 @@
 
 
 
-                        <p id="anim" style="font-size: 20px;font-weight:600;padding-left: 40px;">Programari viitoare</p>
+                        <!-- <p id="anim" style="font-size: 20px;font-weight:600;padding-left: 40px;">Programari viitoare</p>
                         <center>
                             <div class="abc scroll" style="height: 250px;padding: 0;margin: 0;">
                                 <table width="85%" class="sub-table scrolldown" border="0">
@@ -273,7 +273,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </center>
+                        </center> -->
                     </td>
                 </tr>
             </table>

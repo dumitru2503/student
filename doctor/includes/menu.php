@@ -1,3 +1,5 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
 <div class="menu">
   <table class="menu-container" border="0">
     <tr>
@@ -14,7 +16,7 @@
           </tr>
           <tr>
             <td colspan="2">
-              <a href="../logout.php"><input type="button" value="Deconectare"
+              <a href="../logout.php"><input type="button" value="Log Out"
                   class="logout-btn btn-primary-soft btn"></a>
             </td>
           </tr>
@@ -25,7 +27,7 @@
       <td class="menu-btn menu-icon-home">
         <a href="index.php">
           <div>
-            <p class="menu-text">Acasă</p>
+            <p class="menu-text"><i class="fa-solid fa-house" style="margin-right: 12px;border: 2px solid #ffffff; border-radius: 50%; padding: 10px; color: #ffffff;"></i>Dashboard</p>
           </div>
         </a>
       </td>
@@ -34,7 +36,16 @@
       <td class="menu-btn menu-icon-appoinment">
         <a href="appointment.php">
           <div>
-            <p class="menu-text">Programari</p>
+            <p class="menu-text"><i class="fa-solid fa-calendar-days" style="margin-right: 12px;border: 2px solid #ffffff; border-radius: 50%; padding: 10px; color: #ffffff;"></i>Appointments</p>
+          </div>
+        </a>
+      </td>
+    </tr>
+    <tr class="menu-row">
+      <td class="menu-btn menu-icon-appoinment">
+        <a href="patients.php">
+          <div>
+            <p class="menu-text"><i class="fa-solid fa-user" style="margin-right: 12px;border: 2px solid #ffffff; border-radius: 50%; padding: 10px; color: #ffffff;"></i>Patients</p>
           </div>
         </a>
       </td>
@@ -53,7 +64,7 @@
       <td class="menu-btn menu-icon-schedule">
         <a href="schedule.php">
           <div>
-            <p class="menu-text">Orar</p>
+            <p class="menu-text"><i class="fa-solid fa-list" style="margin-right: 12px;border: 2px solid #ffffff; border-radius: 50%; padding: 10px; color: #ffffff; "></i>Orar</p>
           </div>
         </a>
       </td>
@@ -61,8 +72,9 @@
     <tr class="menu-row">
       <td class="menu-btn menu-icon-settings">
         <a href="settings.php">
-          <div>
-            <p class="menu-text">Setări</p>
+          <div style="margin-top: 50px;">
+            <p class="menu-text"><i class="fas fa-cog" style="margin-right: 12px;border: 2px solid #ffffff; border-radius: 50%; padding: 10px; color: #ffffff;"></i>
+            Settings</p>
           </div>
         </a>
       </td>
