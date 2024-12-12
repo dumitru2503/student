@@ -55,7 +55,7 @@
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr class="header">
                     <td width="13%">
-                        <a href="schedule.php"><button class="login-btn btn-primary-soft btn btn-icon-back"
+                        <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                                 style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
                                 <font class="tn-in-text">Inapoi</font>
                             </button></a>
@@ -72,7 +72,7 @@
                     </td>
                     <td width="15%">
                         <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
-                            Today's Date
+                            Data de azi
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php echo $today; ?>
@@ -120,25 +120,35 @@
 
 
                                         if ($result->num_rows == 0) {
-                                            echo '<tr>
-                                    <td colspan="4">
-                                    <br><br><br><br>
-                                    <center>
-                                    <img src="../img/notfound.svg" width="25%">
-                                    
-                                    <br>
-                                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">We  couldnt find anything related to your keywords !</p>
-                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Sessions &nbsp;</font></button>
-                                    </a>
-                                    </center>
-                                    <br><br><br><br>
-                                    </td>
-                                    </tr>';
+                                            ?>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <br><br><br><br>
+                                                    <center>
+                                                        <img src="../img/notfound.svg" width="25%">
+
+                                                        <br>
+                                                        <p class="heading-main12"
+                                                            style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">
+                                                            We couldnt find anything related to your keywords !</p>
+                                                        <a class="non-style-link" href="schedule.php"><button
+                                                                class="login-btn btn-primary-soft btn"
+                                                                style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp;
+                                                                Show all Sessions &nbsp;</font></button>
+                                                        </a>
+                                                    </center>
+                                                    <br><br><br><br>
+                                                </td>
+                                            </tr>
+
+                                            <?php
 
                                         } else {
-                                            //echo $result->num_rows;
-                                            for ($x = 0; $x < ($result->num_rows); $x++) {
-                                                echo "<tr>";
+
+                                            for ($x = 0; $x < ($result->num_rows); $x++) { ?>
+                                                <tr>
+
+                                                <?php
                                                 for ($q = 0; $q < 3; $q++) {
                                                     $row = $result->fetch_assoc();
                                                     if (!isset($row)) {
@@ -147,51 +157,47 @@
                                                     ;
                                                     $service_id = $row["id"];
                                                     $service_name = $row["name"];
+                                                    $service_image = $row["image"];
 
                                                     if ($service_id == "") {
                                                         break;
                                                     }
 
-                                                    echo '
-                                        <td style="width: 25%;">
-                                                <div  class="dashboard-items search-items"  >
-                                                
-                                                    <div style="width:100%">
-                                                            <a href="booking.php?id=' . $service_id . '" >
-                                                                <div class="service-container">
-                                                                    <img src="../img/service1.png">
-                                                                    <br>
-                                                                    <div class="h3-search">
-                                                                        ' . substr($service_name, 0, 21) . '
+                                                    ?>
+                                                    <td style="width: 25%;">
+                                                        <div class="dashboard-items search-items">
+                                                            <div style="width:100%">
+                                                                <a href="booking.php?id=<?php echo $service_id; ?>">
+                                                                    <div class="service-container">
+                                                                        <img
+                                                                            src="<?php echo join('/', array(trim('../img/', '/'), trim($service_image, '/'))) ?>">
+                                                                        <br>
+                                                                        <div class="h3-search">
+                                                                            <?php echo substr($service_name, 0, 21); ?>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            </a>
-                                                            
-                                                    </div>
-                                                            
-                                                </div>
-                                            </td>';
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    
 
-                                                }
-                                                echo "</tr>";
-
-                                            }
-                                        }
-
-                                        ?>
-
-                                    </tbody>
-
-                                </table>
-                            </div>
-                        </center>
-                    </td>
-                </tr>
+                    
+                                                <?php } ?>
+                                                </tr>
+                                            <?php } ?>
+                                        <?php } ?>
+        </tbody>
+        </table>
+    </div>
+    </center>
+    </td>
+    </tr>
 
 
 
-            </table>
-        </div>
+    </table>
+    </div>
     </div>
 
     </div>

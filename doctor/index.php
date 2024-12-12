@@ -78,7 +78,7 @@
                 <tr>
 
                     <td colspan="1" class="nav-bar">   
-                    <p style="font-size: 23px;color:#ffffff;border-radius: 10px; padding-left: 50px;padding-right: 300px; font-weight: 600; margin-left: 20px;padding-top: 30px;padding-bottom: 30px; border: 1px solid; background-color: #2d3663;">Profile</p>
+                    <p style="font-size: 23px;color:#ffffff;border-radius: 40px; padding-left: 50px;padding-right: 300px; font-weight: 600; margin-left: 20px;padding-top: 30px;padding-bottom: 30px; border: 1px solid; background-color: #2d3663;">Profile</p>
                     
                     </td>
                     <td width="25%">
@@ -86,7 +86,7 @@
                     </td>
                     <td width="15% ">
                         <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
-                            Today's Date
+                            Data de azi
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php echo $today; ?>
@@ -102,7 +102,8 @@
                     <td colspan="4">
 
                         <center>
-                            <table class="filter-container doctor-header" style="border: none;margin-top:30px;width:95%" border="0">
+                            <table class="filter-container doctor-header" style="border: none;margin-top:30px;width:95%"
+                                border="0">
                                 <tr>
                                     <td style="background-color: #b9c9e6; padding-left: 30px; border-radius: 10px">
                                         <h3>Welcome back!</h3>

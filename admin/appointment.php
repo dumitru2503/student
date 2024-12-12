@@ -119,9 +119,9 @@
         <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
             <tr>
                 <td width="13%">
-                    <a href="appointment.php"><button class="login-btn btn-primary-soft btn btn-icon-back"
+                    <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                             style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                            <font class="tn-in-text">Back</font>
+                            <font class="tn-in-text">Inapoi</font>
                         </button></a>
                 </td>
                 <td>
@@ -130,7 +130,7 @@
                 </td>
                 <td width="15%">
                     <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
-                        Today's Date
+                        Data de azi
                     </p>
                     <p class="heading-sub12" style="padding: 0;margin: 0;">
                         <?php
@@ -215,7 +215,7 @@
                                     </select>
                                 </td>
                                 <td width="12%">
-                                    <input type="submit" name="filter" value=" Filter"
+                                    <input type="submit" name="filter" value=" Filtrare"
                                         class=" btn-primary-soft btn button-icon btn-filter"
                                         style="padding: 15px; margin :0;width:100%">
                                     </form>

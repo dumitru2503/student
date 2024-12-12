@@ -53,9 +53,9 @@
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr>
                     <td width="13%">
-                        <a href="schedule.php"><button class="login-btn btn-primary-soft btn btn-icon-back"
+                        <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                                 style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                                <font class="tn-in-text">Back</font>
+                                <font class="tn-in-text">Inapoi</font>
                             </button></a>
                     </td>
                     <td>
@@ -88,7 +88,7 @@
                     </td>
                     <td width="15%">
                         <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
-                            Today's Date
+                            Data de azi
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php
@@ -159,71 +159,71 @@
                                                 $doctor_name = $row["doctor_name"];
 
 
-                                        ?>      
-                                                <form action="booking-complete.php" method="post">
+                                                ?>      
+                                                        <form action="booking-complete.php" method="post">
 
-                                                <tr>
-                                                    <td>
-                                                        <div class="dashboard-items search-items">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="dashboard-items search-items">
 
-                                                            <div style="width:100%">
-                                                                Serviciu:
-                                                                <div class="h1-search" style="font-size:25px;">
-                                                                    <?php echo $service_name; ?>
-                                                                </div><br>
+                                                                    <div style="width:100%">
+                                                                        Serviciu:
+                                                                        <div class="h1-search" style="font-size:25px;">
+                                                                            <?php echo $service_name; ?>
+                                                                        </div><br>
 
-                                                                <input type="hidden" name="service_id"
-                                                                    value="<?php echo $service_id; ?>">
+                                                                        <input type="hidden" name="service_id"
+                                                                            value="<?php echo $service_id; ?>">
 
-                                                                <label for="doctor">Doctor:</label>
-                                                                <select class="input-text filter-container-items" name="doctor_id"
-                                                                    style="margin: 0;width: 95%;">
-                                                                    <option value=<?php echo $doctor_id ?>><?php echo $doctor_name ?></option>
-                                                                    <?php
-                                                                    while ($row = $result->fetch_assoc()) {
-                                                                        echo "<option value=" . $row["doctor_id"] . ">" . $row["doctor_name"] . "</option>";
-                                                                    }
-                                                                    ?>
-                                                                </select>
-                                                                <br>
+                                                                        <label for="doctor">Doctor:</label>
+                                                                        <select class="input-text filter-container-items" name="doctor_id"
+                                                                            style="margin: 0;width: 95%;">
+                                                                            <option value=<?php echo $doctor_id ?>><?php echo $doctor_name ?></option>
+                                                                            <?php
+                                                                            while ($row = $result->fetch_assoc()) {
+                                                                                echo "<option value=" . $row["doctor_id"] . ">" . $row["doctor_name"] . "</option>";
+                                                                            }
+                                                                            ?>
+                                                                        </select>
+                                                                        <br>
 
-                                                                <label for="date">Data:</label>
-                                                                <input type="date" name="date" 
-                                                                    value=<?php echo '"' . $today . '"' ?>
-                                                                    min=<?php echo '"' . $today . '"' ?>
-                                                                    class="input-text filter-container-items"
-                                                                    style="margin: 0;width: 95%;">
-                                                                <br>
+                                                                        <label for="date">Data:</label>
+                                                                        <input type="date" name="date" 
+                                                                            value=<?php echo '"' . $today . '"' ?>
+                                                                            min=<?php echo '"' . $today . '"' ?>
+                                                                            class="input-text filter-container-items"
+                                                                            style="margin: 0;width: 95%;">
+                                                                        <br>
 
-                                                                <label for="time">Ora:</label>
-                                                                <select class="input-text filter-container-items"
-                                                                    style="margin: 0;width: 95%;" name="time" id="time">
-                                                                    <option value="09:00">09:00</option>
-                                                                    <option value="10:00" disabled>10:00</option>
-                                                                    <option value="11:00">11:00</option>
-                                                                </select>
-                                                                <br>
+                                                                        <label for="time">Ora:</label>
+                                                                        <select class="input-text filter-container-items"
+                                                                            style="margin: 0;width: 95%;" name="time" id="time">
+                                                                            <option value="09:00">09:00</option>
+                                                                            <option value="10:00" disabled>10:00</option>
+                                                                            <option value="11:00">11:00</option>
+                                                                        </select>
+                                                                        <br>
 
-                                                                <div class="h3-search" style="font-size:18px;">
-                                                                    Pret : <b>2500 Lei</b>
+                                                                        <div class="h3-search" style="font-size:18px;">
+                                                                            Pret : <b>2500 Lei</b>
+
+                                                                        </div>
+                                                                        <br>
+
+                                                                    </div>
 
                                                                 </div>
-                                                                <br>
-
-                                                            </div>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <input type="Submit" class="login-btn btn-primary btn btn-book"
-                                                            style="margin-left:10px;padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;width:95%;text-align: center;"
-                                                            value="Programeaza" name="booknow"></input>
-                                                    </td>
-                                                </tr>
-                                                </form>
-                                                <?php
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="Submit" class="login-btn btn-primary btn btn-book"
+                                                                    style="margin-left:10px;padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;width:95%;text-align: center;"
+                                                                    value="Programeaza" name="booknow"></input>
+                                                            </td>
+                                                        </tr>
+                                                        </form>
+                                                        <?php
                                             }
                                         }
                                         ?>

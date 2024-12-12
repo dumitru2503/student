@@ -34,9 +34,31 @@
         header("location: ../login.php");
     }
 
+    date_default_timezone_set('Europe/Bucharest');
+    $today = date('Y-m-d');
+    $filter_date = isset($_GET['filter_date']) ? $_GET['filter_date'] : "";
 
     //import database
     include("../connection.php");
+
+    $sqlmain = "SELECT appointment.id AS appointment_id, users.name AS doctor_name, services.name AS service_name, appointment.date, appointment.time
+                FROM appointment
+                INNER JOIN services ON appointment.service_id = services.id
+                INNER JOIN users ON appointment.doctor_id = users.id
+                WHERE appointment.patient_id = ?";
+
+    if ($filter_date) {
+        $sqlmain .= " AND appointment.date = ?";
+        $result = $database->prepare($sqlmain);
+        $result->bind_param("ss", $user_id, $filter_date);
+    } else {
+        $sqlmain .= " ORDER BY appointment.date DESC";
+        $result = $database->prepare($sqlmain);
+        $result->bind_param("s", $user_id);
+    }
+
+    $result->execute();
+    $result = $result->get_result();
 
 
     ?>
@@ -46,29 +68,21 @@
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr>
                     <td width="13%">
-                        <a href="appointment.php"><button class="login-btn btn-primary-soft btn btn-icon-back"
+                        <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                                 style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                                <font class="tn-in-text">Back</font>
+                                <font class="tn-in-text">Inapoi</font>
                             </button></a>
                     </td>
                     <td>
-                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">My Bookings history</p>
+                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Istoricul programarilor</p>
 
                     </td>
                     <td width="15%">
                         <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
-                            Today's Date
+                            Data de azi
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
-                            <?php
-
-                            date_default_timezone_set('Europe/Bucharest');
-
-                            $today = date('Y-m-d');
-                            echo $today;
-
-
-                            ?>
+                            <?php echo $today; ?>
                         </p>
                     </td>
                     <td width="10%">
@@ -89,25 +103,11 @@
                         </div>
                     </td>
                 </tr> -->
-
-                <?php
-                $sqlmain = "SELECT appointment.id AS appointment_id, users.name AS doctor_name, services.name AS service_name, appointment.date, appointment.time
-                FROM appointment
-                INNER JOIN services ON appointment.service_id = services.id
-                INNER JOIN users ON appointment.doctor_id = users.id
-                WHERE appointment.patient_id = ?
-                ORDER BY appointment.date ASC";
-                $result = $database->prepare($sqlmain);
-                $result->bind_param("s", $user_id);
-                $result->execute();
-                $result = $result->get_result();
-                ?>
-
                 <tr>
                     <td colspan="4" style="padding-top:10px;width: 100%;">
 
-                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">My
-                            Bookings
+                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">
+                            Programari
                             (<?php echo $result->num_rows; ?>)</p>
                     </td>
 
@@ -117,27 +117,26 @@
                         <center>
                             <table class="filter-container" border="0">
                                 <tr>
-                                    <td width="10%">
+                                    <form action="./appointment.php" method="GET">
+                                        <td width="10%">
 
-                                    </td>
-                                    <td width="5%" style="text-align: center;">
-                                        Date:
-                                    </td>
-                                    <td width="30%">
-                                        <form action="" method="post">
+                                        </td>
+                                        <td width="5%" style="text-align: center;">
+                                            Date:
+                                        </td>
+                                        <td width="30%">
 
-                                            <input type="date" name="sheduledate" id="date"
+                                            <input type="date" name="filter_date" id="date" <?php echo "value='$filter_date'"; ?>
                                                 class="input-text filter-container-items" style="margin: 0;width: 95%;">
 
-                                    </td>
+                                        </td>
 
-                                    <td width="12%">
-                                        <input type="submit" name="filter" value=" Filter"
-                                            class=" btn-primary-soft btn button-icon btn-filter"
-                                            style="padding: 15px; margin :0;width:100%">
-                                        </form>
-                                    </td>
-
+                                        <td width="12%">
+                                            <input type="submit" value="Filtrare"
+                                                class=" btn-primary-soft btn button-icon btn-filter"
+                                                style="padding: 15px; margin :0;width:100%">
+                                        </td>
+                                    </form>
                                 </tr>
                             </table>
 
@@ -203,8 +202,8 @@
                                                     
                                                         <div style="width:100%;">
                                                         <div class="h3-search">
-                                                                    Booking Date: ' . substr($appointment_date, 0, 30) . '<br>
-                                                                    Reference Number: OC-000-' . $appointment_id . '
+                                                                    Data Programarii: ' . substr($appointment_date, 0, 30) . '<br>
+                                                                    Numarul: OC-000-' . $appointment_id . '
                                                                 </div>
                                                                 <div class="h1-search">
                                                                     ' . substr($service_name, 0, 21) . '<br>
@@ -215,7 +214,7 @@
                                                                 
                                                                 
                                                                 <div class="h4-search">
-                                                                    Starts: <b>@' . substr($appointment_time, 0, 5) . '</b> (24h)
+                                                                    Ora: <b>@' . substr($appointment_time, 0, 5) . '</b> (1h)
                                                                 </div>
                                                                 <br>
                                                                 <a href="?action=drop&id=' . $appointment_id . '&service=' . $service_name . '&doctor=' . $doctor_name . '" >
