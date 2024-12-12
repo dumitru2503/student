@@ -119,9 +119,9 @@
             <tr>
                 <td width="13%">
 
-                    <a href="patient.php"><button class="login-btn btn-primary-soft btn btn-icon-back"
+                    <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                             style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                            <font class="tn-in-text">Back</font>
+                            <font class="tn-in-text">Inapoi</font>
                         </button></a>
 
                 </td>
@@ -157,7 +157,7 @@
                 </td>
                 <td width="15%">
                     <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
-                        Today's Date
+                        Data de azi
                     </p>
                     <p class="heading-sub12" style="padding: 0;margin: 0;">
                         <?php
