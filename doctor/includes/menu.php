@@ -15,10 +15,14 @@
             </td>
           </tr>
           <tr>
-            <td colspan="2">
-              <a href="../logout.php"><input type="button" value="Log Out"
-                  class="logout-btn btn-primary-soft btn"></a>
-            </td>
+          <td colspan="2">
+  <a href="../logout.php">
+    <button class="logout-btn btn-primary-soft btn">
+       Log Out <i class="fa-solid fa-right-from-bracket" style="margin-right: 8px; margin-left: 6px"></i>
+    </button>
+  </a>
+</td>
+
           </tr>
         </table>
       </td>
@@ -27,7 +31,7 @@
       <td class="menu-btn menu-icon-home">
         <a href="index.php">
           <div>
-            <p class="menu-text"><i class="fa-solid fa-house" style="margin-right: 12px;border: 2px solid #ffffff; border-radius: 50%; padding: 10px; color: #ffffff;"></i>Dashboard</p>
+            <p class="menu-text"><i class="fa-solid fa-house" style="margin-right: 12px; padding: 10px; "></i>Dashboard</p>
           </div>
         </a>
       </td>
@@ -36,7 +40,7 @@
       <td class="menu-btn menu-icon-appoinment">
         <a href="appointment.php">
           <div>
-            <p class="menu-text"><i class="fa-solid fa-calendar-days" style="margin-right: 12px;border: 2px solid #ffffff; border-radius: 50%; padding: 10px; color: #ffffff;"></i>Appointments</p>
+            <p class="menu-text"><i class="fa-solid fa-calendar-days" style="margin-right: 12px; padding: 10px; "></i>Appointments</p>
           </div>
         </a>
       </td>
@@ -45,7 +49,7 @@
       <td class="menu-btn menu-icon-appoinment">
         <a href="patients.php">
           <div>
-            <p class="menu-text"><i class="fa-solid fa-user" style="margin-right: 12px;border: 2px solid #ffffff; border-radius: 50%; padding: 10px; color: #ffffff;"></i>Patients</p>
+            <p class="menu-text"><i class="fa-solid fa-user" style="margin-right: 12px; padding: 10px; "></i>Patients</p>
           </div>
         </a>
       </td>
@@ -64,7 +68,7 @@
       <td class="menu-btn menu-icon-schedule">
         <a href="schedule.php">
           <div>
-            <p class="menu-text"><i class="fa-solid fa-list" style="margin-right: 12px;border: 2px solid #ffffff; border-radius: 50%; padding: 10px; color: #ffffff; "></i>Orar</p>
+            <p class="menu-text"><i class="fa-solid fa-list" style="margin-right: 12px; padding: 10px; "></i>Orar</p>
           </div>
         </a>
       </td>
@@ -73,7 +77,7 @@
       <td class="menu-btn menu-icon-settings">
         <a href="settings.php">
           <div style="margin-top: 50px;">
-            <p class="menu-text"><i class="fas fa-cog" style="margin-right: 12px;border: 2px solid #ffffff; border-radius: 50%; padding: 10px; color: #ffffff;"></i>
+            <p class="menu-text"><i class="fas fa-cog" style="margin-right: 12px; padding: 10px; "></i>
             Settings</p>
           </div>
         </a>

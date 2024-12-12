@@ -78,7 +78,7 @@
                 <tr>
 
                     <td colspan="1" class="nav-bar">   
-                    <p style="font-size: 23px;color:#ffffff;border-radius: 40px; padding-left: 50px;padding-right: 300px; font-weight: 600; margin-left: 20px;padding-top: 30px;padding-bottom: 30px; border: 1px solid; background-color: #2d3663;">Profile</p>
+                    <p style="font-size: 23px;color:#ffffff;border-radius: 10px; padding-left: 50px;padding-right: 300px; font-weight: 600; margin-left: 20px;padding-top: 30px;padding-bottom: 30px; border: 1px solid; background-color: #2d3663;">Profile</p>
                     
                     </td>
                     <td width="25%">
@@ -104,7 +104,7 @@
                         <center>
                             <table class="filter-container doctor-header" style="border: none;margin-top:30px;width:95%" border="0">
                                 <tr>
-                                    <td style="background-color: #b9c9e6; padding-left: 30px; border-radius: 40px">
+                                    <td style="background-color: #b9c9e6; padding-left: 30px; border-radius: 10px">
                                         <h3>Welcome back!</h3>
                                         <h1><?php echo $user_name ?>.</h1>
                                         <p>Thanks for joinnig with us. We are always trying to get you a complete
@@ -113,7 +113,7 @@
                                             home!<br><br>
                                         </p>
                                         <a href="appointment.php" class="non-style-link"><button class="btn-primary btn"
-                                                style="width:30%;border-radius:40px">View My Appointments</button></a>
+                                                style="width:30%;border-radius:10px">View My Appointments</button></a>
                                         <br>
                                         <br>
                                     </td>
@@ -131,6 +131,9 @@
                             <center>
                                 <table class="filter-container" style="border: none;" border="0">
                                     <tr>
+                                    <hr style="width: 90%; border: 1px solid #2d3663; margin: 0 auto;">
+
+
                                         <td colspan="4">
                                             <p style="font-size: 20px;font-weight:600;padding-left: 12px;">Status</p>
                                         </td>
@@ -138,14 +141,14 @@
                                     <tr>
                                         <td style="width: 25%;">
                                             <div class="dashboard-items"
-                                                style="padding:20px;margin:auto;width:95%;display: flex">
-                                                <div>
-                                                    <div class="h1-dashboard">
+                                                style="padding:20px;margin:auto;width:95%;display: flex;background-color:#b9c9e6;">
+                                                <div style="display: flex; align-items: center;"><i class="fa-solid fa-users" style="padding: 10px; border-radius: 5px; margin-right: 20px;background-color:#5c7199;"></i>
+                                                    <div class="h3-dashboard" style="margin-left: 2px;margin-top: 20px;">
+                                                        Total Patients &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    </div>
+                                                    <div class="h1-dashboard" style="margin-left: 20px;">
                                                         <?php echo $appointments->num_rows ?>
                                                     </div><br>
-                                                    <div class="h3-dashboard">
-                                                        Programari &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    </div>
                                                 </div>
                                                 <!-- <div class="btn-icon-back dashboard-icons"
                                                     style="background-image: url('../img/icons/doctors-hover.svg');">
@@ -154,17 +157,50 @@
                                         </td>
                                         <td style="width: 25%;">
                                             <div class="dashboard-items"
-                                                style="padding:20px;margin:auto;width:95%;display: flex;">
-                                                <div>
-                                                    <div class="h1-dashboard">
+                                                style="padding:20px;margin:auto;width:95%;display: flex;background-color:#b9c9e6;">
+                                                <div style="display: flex; align-items: center;"><i class="fa-regular fa-calendar-check" style="padding: 10px; border-radius: 5px; margin-right: 20px;background-color:#5c7199;"></i>
+                                                    
+                                                    <div class="h3-dashboard" style="margin-left: 2px;margin-top: 20px;">
+                                                        Today Appointments &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    </div>
+                                                    <div class="h1-dashboard" style="margin-left: 20px">
                                                         <?php echo $today_appointments->num_rows ?>
                                                     </div><br>
-                                                    <div class="h3-dashboard">
-                                                        Programari astazi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    </div>
                                                 </div>
                                                 <!-- <div class="btn-icon-back dashboard-icons"
                                                     style="background-image: url('../img/icons/patients-hover.svg');">
+                                                </div> -->
+                                            </div>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <div class="dashboard-items"
+                                                style="padding:20px;margin:auto;width:95%;display: flex;background-color:#b9c9e6;">
+                                                <div style="display: flex; align-items: center;"><i class="fa-solid fa-clipboard-list" style="padding: 10px; border-radius: 5px; margin-right: 20px;background-color:#5c7199;"></i>
+                                                    <div class="h3-dashboard" style="margin-left: 2px;margin-top: 20px;">
+                                                        Daily Schedule &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    </div>
+                                                    <div class="h1-dashboard" style="margin-left: 20px;">
+                                                        <?php echo $appointments->num_rows ?>
+                                                    </div><br>
+                                                </div>
+                                                <!-- <div class="btn-icon-back dashboard-icons"
+                                                    style="background-image: url('../img/icons/doctors-hover.svg');">
+                                                </div> -->
+                                            </div>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <div class="dashboard-items"
+                                                style="padding:20px;margin:auto;width:95%;display: flex;background-color:#b9c9e6;">
+                                                <div style="display: flex; align-items: center;"><i class="fa-solid fa-bell" style="padding: 10px; border-radius: 5px; margin-right: 20px;background-color:#5c7199;"></i>
+                                                    <div class="h3-dashboard" style="margin-left: 2px;margin-top: 45px;margin-bottom: 10px">
+                                                        Reminders &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    </div>
+                                                    <div class="h1-dashboard" style="margin-left: 20px;margin-bottom: 10px">
+                                                        <?php echo $appointments->num_rows ?>
+                                                    </div><br>
+                                                </div>
+                                                <!-- <div class="btn-icon-back dashboard-icons"
+                                                    style="background-image: url('../img/icons/doctors-hover.svg');">
                                                 </div> -->
                                             </div>
                                         </td>

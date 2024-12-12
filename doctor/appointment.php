@@ -77,7 +77,8 @@
                             </button></a>
                     </td>
                     <td>
-                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Appointment Manager</p>
+                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">My Appointments</p>
+                        <p style="font-size: 14px;padding-left:12px;font-weight: 500;">Check and Filter all your medical appointments here.</p>
 
                     </td>
                     <td width="15%">

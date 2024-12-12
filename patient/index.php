@@ -82,7 +82,7 @@
                     <td colspan="4">
 
                         <center>
-                            <table class="filter-container doctor-header patient-header" style="border: none;width:95%"
+                            <table class="filter-container doctor-header patient-header" style="border: none;width:95%;background-color: #b9c9e6"
                                 border="0">
                                 <tr>
                                     <td>
@@ -120,8 +120,10 @@
                                             ?>
 
 
-                                            <input type="Submit" value="Căutare" class="login-btn btn-primary btn"
-                                                style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
+<button type="submit" class="login-btn btn-primary btn" style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
+<i class="fa-solid fa-magnifying-glass"></i> Căutare
+</button>
+
 
                                             <br>
                                             <br>
