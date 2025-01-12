@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2024 at 02:26 PM
+-- Generation Time: Jan 12, 2025 at 05:14 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -51,7 +51,8 @@ INSERT INTO `appointment` (`id`, `patient_id`, `doctor_id`, `service_id`, `date`
 (8, 16, 6, 6, '2024-11-17', '13:00:00'),
 (9, 17, 7, 9, '2024-11-18', '09:45:00'),
 (10, 18, 8, 3, '2024-11-18', '10:45:00'),
-(12, 15, 4, 1, '2024-11-26', '09:00:00');
+(12, 15, 4, 1, '2024-11-26', '09:00:00'),
+(13, 15, 4, 1, '2024-12-01', '09:00:00');
 
 -- --------------------------------------------------------
 
@@ -76,9 +77,6 @@ INSERT INTO `doctor_services` (`doctor_id`, `service_id`) VALUES
 (5, 5),
 (6, 1),
 (6, 6),
-(6, 7),
-(7, 8),
-(7, 9),
 (8, 2),
 (8, 3),
 (8, 4),
@@ -92,23 +90,22 @@ INSERT INTO `doctor_services` (`doctor_id`, `service_id`) VALUES
 
 CREATE TABLE `services` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`id`, `name`) VALUES
-(1, 'ALBIREA DINȚILOR'),
-(2, 'APARAT DENTAR'),
-(3, 'COROANA DENTARĂ'),
-(4, 'DETARTRAJ DENTAR'),
-(5, 'EXTRACȚIE DENTARĂ'),
-(6, 'FAȚETE DENTARE'),
-(7, 'IMPLANTUL DENTAR'),
-(8, 'SCOATEREA NERVULUI'),
-(9, 'PROTEZE DENTARE');
+INSERT INTO `services` (`id`, `name`, `description`, `image`) VALUES
+(1, 'Implant dentar', 'Implantul dentar este solutia de lunga durata – iar pentru tine, arata si se simt ca dintii naturali.', '/service1.png'),
+(2, 'Coroane si punti', 'Restaurari protetice pe dinti naturali sau pe implanturi, cu ajutorul tehnologiei scanner-ului intraoral.', '/service2.png'),
+(3, 'Fatete dentare', 'Restaurarea prin fatete dentare este minim invaziva, delicata si cu rezutate de lunga durata.', '/service3.png'),
+(4, 'Aparat dentar', 'Rezultatele obtinute in urma unui astfel de tratament sunt nu doar exceptionale din punct de vedere estetic, ci si din punct de vedere functional.', '/service4.png'),
+(5, 'Laser dentar', 'Considerat a fi ultima tehnologie în materie de tratamente in medicină, laserul este acum un instrument nelipsit si in clinica noastra de stomatologie din Craiova.', '/service5.png'),
+(6, 'Parodontologie', 'Boala parodontala poate fi prevenita si tratata cu success prin terapii corecte, pentru a evita sau intarzia cat mai mult posibil pierderea dintilor.', '/service6.png');
 
 -- --------------------------------------------------------
 
@@ -189,7 +186,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `services`
