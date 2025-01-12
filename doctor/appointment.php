@@ -146,195 +146,195 @@
 
 
                     <?php if ($future_appointments->num_rows > 0) { ?>
-                        </tr>
-                        <tr>
-                            <td colspan="4" style="padding-top:10px;width: 100%;">
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="padding-top:10px;width: 100%;">
 
-                                <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">
-                                    Viitoare (<?php echo $future_appointments->num_rows; ?>)</p>
-                            </td>
+                                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">
+                                        Viitoare (<?php echo $future_appointments->num_rows; ?>)</p>
+                                </td>
 
-                        </tr>
-                        <tr>
-                            <td colspan="4">
-                                <center>
-                                    <div class="abc scroll">
-                                        <table width="93%" class="sub-table scrolldown" border="0">
-                                            <thead>
-                                                <tr>
-                                                    <th class="table-headin">
-                                                        Nume pacient
-                                                    </th>
-                                                    <th class="table-headin">
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <center>
+                                        <div class="abc scroll">
+                                            <table width="93%" class="sub-table scrolldown" border="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="table-headin">
+                                                            Nume pacient
+                                                        </th>
+                                                        <th class="table-headin">
 
 
-                                                        Serviciu
+                                                            Serviciu
 
-                                                    </th>
+                                                        </th>
 
-                                                    <th class="table-headin">
+                                                        <th class="table-headin">
 
-                                                        Date
+                                                            Date
 
-                                                    </th>
+                                                        </th>
 
-                                                    <th class="table-headin">
+                                                        <th class="table-headin">
 
-                                                        Ora
+                                                            Ora
 
-                                                    </th>
+                                                        </th>
 
-                                                    <th class="table-headin">
+                                                        <th class="table-headin">
 
-                                                        Actiuni
+                                                            Actiuni
 
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
 
-                                                <?php
-                                                for ($x = 0; $x < $future_appointments->num_rows; $x++) {
-                                                    $row = $future_appointments->fetch_assoc();
+                                                    <?php
+                                                    for ($x = 0; $x < $future_appointments->num_rows; $x++) {
+                                                        $row = $future_appointments->fetch_assoc();
 
-                                                    $appointment_id = $row["appointment_id"];
-                                                    $patient_name = $row["patient_name"];
-                                                    $service_name = $row["service_name"];
-                                                    $time = $row["time"];
-                                                    $date = $row["date"];
+                                                        $appointment_id = $row["appointment_id"];
+                                                        $patient_name = $row["patient_name"];
+                                                        $service_name = $row["service_name"];
+                                                        $time = $row["time"];
+                                                        $date = $row["date"];
 
+                                                        ?>
+                                                                <tr>
+                                                                    <td style="font-weight:600;text-align:center;">
+                                                                        &nbsp;<?php echo substr($patient_name, 0, 25); ?></td>
+                                                                    <td style="text-align:center;"><?php echo substr($service_name, 0, 25); ?>
+                                                                    </td>
+                                                                    <td style="text-align:center;"><?php echo $date; ?></td>
+                                                                    <td style="text-align:center;"><?php echo $time; ?></td>
+                                                                    <td style="text-align:center;">
+                                                                        <div style="display:flex;justify-content: center;">
+                                                                            <a href="?action=drop&id=<?php echo $appointment_id; ?>&patient=<?php echo $patient_name; ?>&service=<?php echo $service_name; ?>&date=<?php echo $date; ?>&time=<?php echo $time; ?>"
+                                                                                class="non-style-link">
+                                                                                <button class="btn-primary-soft btn button-icon btn-delete"
+                                                                                    style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;">
+                                                                                    <font class="tn-in-text">Cancel</font>
+                                                                                </button>
+                                                                            </a>
+                                                                            &nbsp;&nbsp;&nbsp;
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <?php
+                                                    }
                                                     ?>
-                                                        <tr>
-                                                            <td style="font-weight:600;text-align:center;">
-                                                                &nbsp;<?php echo substr($patient_name, 0, 25); ?></td>
-                                                            <td style="text-align:center;"><?php echo substr($service_name, 0, 25); ?>
-                                                            </td>
-                                                            <td style="text-align:center;"><?php echo $date; ?></td>
-                                                            <td style="text-align:center;"><?php echo $time; ?></td>
-                                                            <td style="text-align:center;">
-                                                                <div style="display:flex;justify-content: center;">
-                                                                    <a href="?action=drop&id=<?php echo $appointment_id; ?>&patient=<?php echo $patient_name; ?>&service=<?php echo $service_name; ?>&date=<?php echo $date; ?>&time=<?php echo $time; ?>"
-                                                                        class="non-style-link">
-                                                                        <button class="btn-primary-soft btn button-icon btn-delete"
-                                                                            style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;">
-                                                                            <font class="tn-in-text">Cancel</font>
-                                                                        </button>
-                                                                    </a>
-                                                                    &nbsp;&nbsp;&nbsp;
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-                                                        <?php
-                                                }
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </center>
-                            </td>
-                        </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </center>
+                                </td>
+                            </tr>
                 <?php } ?>
 
                 <?php if ($past_appointments->num_rows > 0) { ?>
-                        <tr>
-                            <td colspan="4" style="padding-top:10px;width: 100%;">
+                            <tr>
+                                <td colspan="4" style="padding-top:10px;width: 100%;">
 
-                                <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">
-                                    In trecut (<?php echo $past_appointments->num_rows; ?>)</p>
-                            </td>
+                                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">
+                                        In trecut (<?php echo $past_appointments->num_rows; ?>)</p>
+                                </td>
 
-                        </tr>
-                        <tr>
-                            <td colspan="4">
-                                <center>
-                                    <div class="abc scroll">
-                                        <table width="93%" class="sub-table scrolldown" border="0">
-                                            <thead>
-                                                <tr>
-                                                    <th class="table-headin">
-                                                        Nume pacient
-                                                    </th>
-                                                    <th class="table-headin">
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <center>
+                                        <div class="abc scroll">
+                                            <table width="93%" class="sub-table scrolldown" border="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="table-headin">
+                                                            Nume pacient
+                                                        </th>
+                                                        <th class="table-headin">
 
-                                                        Serviciu
+                                                            Serviciu
 
-                                                    </th>
+                                                        </th>
 
-                                                    <th class="table-headin">
+                                                        <th class="table-headin">
 
-                                                        Date
+                                                            Date
 
-                                                    </th>
+                                                        </th>
 
-                                                    <th class="table-headin">
+                                                        <th class="table-headin">
 
-                                                        Ora
+                                                            Ora
 
-                                                    </th>
+                                                        </th>
 
-                                                    <th class="table-headin">
+                                                        <th class="table-headin">
 
-                                                        Actiuni
+                                                            Actiuni
 
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
 
-                                                <?php
-                                                for ($x = 0; $x < $past_appointments->num_rows; $x++) {
-                                                    $row = $past_appointments->fetch_assoc();
+                                                    <?php
+                                                    for ($x = 0; $x < $past_appointments->num_rows; $x++) {
+                                                        $row = $past_appointments->fetch_assoc();
 
-                                                    $appointment_id = $row["appointment_id"];
-                                                    $patient_name = $row["patient_name"];
-                                                    $service_name = $row["service_name"];
-                                                    $time = $row["time"];
-                                                    $date = $row["date"];
+                                                        $appointment_id = $row["appointment_id"];
+                                                        $patient_name = $row["patient_name"];
+                                                        $service_name = $row["service_name"];
+                                                        $time = $row["time"];
+                                                        $date = $row["date"];
 
-                                                    ?>
+                                                        ?>
 
-                                                        <tr>
-                                                            <td style="font-weight:600;text-align:center;">
-                                                                &nbsp;<?php echo substr($patient_name, 0, 25); ?></td>
-                                                            <td style="text-align:center;"><?php echo substr($service_name, 0, 25); ?>
-                                                            </td>
-                                                            <td style="text-align:center;"><?php echo $date; ?></td>
-                                                            <td style="text-align:center;"><?php echo $time; ?></td>
-                                                            <td style="text-align:center;">
-                                                                <div style="display:flex;justify-content: center;">
-                                                                    <a href="?action=drop&id=<?php echo $appointment_id; ?>&patient=<?php echo $patient_name; ?>&service=<?php echo $service_name; ?>&date=<?php echo $date; ?>&time=<?php echo $time; ?>"
-                                                                        class="non-style-link">
-                                                                        <button class="btn-primary-soft btn button-icon btn-delete"
-                                                                            style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;">
-                                                                            <font class="tn-in-text">Cancel</font>
-                                                                        </button>
-                                                                    </a>
-                                                                    &nbsp;&nbsp;&nbsp;
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                <?php } ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </center>
-                            </td>
-                        </tr>
+                                                                <tr>
+                                                                    <td style="font-weight:600;text-align:center;">
+                                                                        &nbsp;<?php echo substr($patient_name, 0, 25); ?></td>
+                                                                    <td style="text-align:center;"><?php echo substr($service_name, 0, 25); ?>
+                                                                    </td>
+                                                                    <td style="text-align:center;"><?php echo $date; ?></td>
+                                                                    <td style="text-align:center;"><?php echo $time; ?></td>
+                                                                    <td style="text-align:center;">
+                                                                        <div style="display:flex;justify-content: center;">
+                                                                            <a href="?action=drop&id=<?php echo $appointment_id; ?>&patient=<?php echo $patient_name; ?>&service=<?php echo $service_name; ?>&date=<?php echo $date; ?>&time=<?php echo $time; ?>"
+                                                                                class="non-style-link">
+                                                                                <button class="btn-primary-soft btn button-icon btn-delete"
+                                                                                    style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;">
+                                                                                    <font class="tn-in-text">Cancel</font>
+                                                                                </button>
+                                                                            </a>
+                                                                            &nbsp;&nbsp;&nbsp;
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                    <?php } ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </center>
+                                </td>
+                            </tr>
                 <?php } ?>
 
                 <?php if ($future_appointments->num_rows == 0 && $past_appointments->num_rows == 0) { ?>
-                        <tr>
-                            <td colspan="7">
-                                <br><br><br><br>
-                                <center>
-                                    <img src="../img/notfound.svg" width="25%">
+                            <tr>
+                                <td colspan="7">
+                                    <br><br><br><br>
+                                    <center>
+                                        <img src="../img/notfound.svg" width="25%">
 
-                                    <br>
-                                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Nu
-                                        am gasit nici o programare</p>
-                                </center>
-                                <br><br><br><br>
-                            </td>
-                        </tr>
+                                        <br>
+                                        <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Nu
+                                            am gasit nici o programare</p>
+                                    </center>
+                                    <br><br><br><br>
+                                </td>
+                            </tr>
                 <?php } ?>
             </table>
         </div>
@@ -365,8 +365,8 @@
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
-                        <a href="delete-appointment.php?id=' . $id . '" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
-                        <a href="appointment.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;No&nbsp;&nbsp;</font></button></a>
+                        <a href="delete-appointment.php?id=' . $id . '" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Da&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
+                        <a href="appointment.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;Nu&nbsp;&nbsp;</font></button></a>
 
                         </div>
                     </center>

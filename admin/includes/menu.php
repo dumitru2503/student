@@ -48,7 +48,7 @@
         </a>
       </td>
     </tr>
-    <tr class="menu-row">
+    <!-- <tr class="menu-row">
       <td class="menu-btn menu-icon-settings">
         <a href="settings.php">
           <div>
@@ -57,7 +57,7 @@
           </div>
         </a>
       </td>
-    </tr>
+    </tr> -->
 
   </table>
 </div>

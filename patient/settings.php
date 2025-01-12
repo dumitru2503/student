@@ -32,32 +32,20 @@
 <body>
     <?php
 
-    //learn from w3schools.com
-    
     session_start();
 
-    if (isset($_SESSION["user"])) {
-        if (($_SESSION["user"]) == "" or $_SESSION['usertype'] != 'p') {
-            header("location: ../login.php");
-        } else {
-            $useremail = $_SESSION["user"];
-        }
-
+    if (isset($_SESSION["user_email"]) && $_SESSION["user_email"] != "" && $_SESSION['user_type'] == 'p') {
+        $user_id = $_SESSION['user_id'];
+        $user_email = $_SESSION["user_email"];
+        $user_name = $_SESSION['user_name'];
     } else {
         header("location: ../login.php");
     }
 
+    date_default_timezone_set('Europe/Bucharest');
+    $today = date('Y-m-d');
 
-    //import database
     include("../connection.php");
-    $sqlmain = "select * from patient where pemail=?";
-    $stmt = $database->prepare($sqlmain);
-    $stmt->bind_param("s", $useremail);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $userfetch = $result->fetch_assoc();
-    $userid = $userfetch["pid"];
-    $username = $userfetch["pname"];
 
     ?>
     <div class="container">
@@ -83,20 +71,7 @@
                             Data de azi
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
-                            <?php
-                            date_default_timezone_set('Europe/Bucharest');
-
-                            $today = date('Y-m-d');
-                            echo $today;
-
-
-                            $patientrow = $database->query("select  * from  patient;");
-                            $doctorrow = $database->query("select  * from  doctor;");
-                            $appointmentrow = $database->query("select  * from  appointment where appodate>='$today';");
-                            $schedulerow = $database->query("select  * from  schedule where scheduledate='$today';");
-
-
-                            ?>
+                            <?php echo $today; ?>
                         </p>
                     </td>
                     <td width="10%">
@@ -107,6 +82,8 @@
 
 
                 </tr>
+
+                <?php die(); ?>
                 <tr>
                     <td colspan="4">
 
@@ -224,8 +201,8 @@
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
-                        <a href="delete-account.php?id=' . $id . '" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
-                        <a href="settings.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;No&nbsp;&nbsp;</font></button></a>
+                        <a href="delete-account.php?id=' . $id . '" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Da&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
+                        <a href="settings.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;Nu&nbsp;&nbsp;</font></button></a>
 
                         </div>
                     </center>

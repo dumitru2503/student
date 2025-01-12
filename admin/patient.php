@@ -24,23 +24,22 @@
 <body>
     <?php
 
-    //learn from w3schools.com
-    
     session_start();
 
-    if (isset($_SESSION["user"])) {
-        if (($_SESSION["user"]) == "" or $_SESSION['usertype'] != 'a') {
-            header("location: ../login.php");
-        }
-
+    if (isset($_SESSION["user_email"]) && $_SESSION["user_email"] != "" && $_SESSION['user_type'] == 'a') {
+        $user_id = $_SESSION['user_id'];
+        $user_email = $_SESSION["user_email"];
+        $user_name = $_SESSION['user_name'];
     } else {
         header("location: ../login.php");
     }
 
+    date_default_timezone_set('Europe/Bucharest');
 
+    $today = date('Y-m-d');
 
-    //import database
     include("../connection.php");
+
 
 
     ?>

@@ -258,7 +258,7 @@
                 <div class="popup">
                     <center>
                         <br><br>
-                        <h2>Booking Successfully.</h2>
+                        <h2>Programarea dvs. a fost realizată cu succes!</h2>
                         <a class="close" href="appointment.php">&times;</a>
                         <div style="display: flex;justify-content: center;">
 
@@ -281,17 +281,15 @@
             <div id="popup1" class="overlay">
                     <div class="popup">
                     <center>
-                        <h2>Are you sure??</h2>
+                        <h2>Doriti sa anulati programarea?</h2>
                         <a class="close" href="appointment.php">&times;</a>
                         <div class="content">
-                            You want to Cancel this Appointment?<br><br>
-                            Session Name: &nbsp;<b>' . substr($service_name, 0, 40) . '</b><br>
-                            Doctor name&nbsp; : <b>' . substr($doctor_name, 0, 40) . '</b><br><br>
-                            
-                        </div>
+                            Denumire serviciu: &nbsp;<b>' . substr($service_name, 0, 40) . '</b><br><br>
+                            Nume medic: &nbsp;<b>' . substr($doctor_name, 0, 40) . '</b><br><br>
+                        </div>                       
                         <div style="display: flex;justify-content: center;">
-                        <a href="delete-appointment.php?id=' . $appointment_id . '" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
-                        <a href="appointment.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;No&nbsp;&nbsp;</font></button></a>
+                        <a href="delete-appointment.php?id=' . $appointment_id . '" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Da&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
+                        <a href="appointment.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;Nu&nbsp;&nbsp;</font></button></a>
                         </div>
                     </center>
             </div>

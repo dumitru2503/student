@@ -583,3 +583,8 @@ p {
   color: var(--text-white);
   font-weight: 600;
 }
+
+.img-test {
+  height: 150px;
+  margin-left: 20px;
+}

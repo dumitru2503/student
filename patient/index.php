@@ -82,8 +82,8 @@
                     <td colspan="4">
 
                         <center>
-                            <table class="filter-container doctor-header patient-header" style="border: none;width:95%"
-                                border="0">
+                            <table class="filter-container doctor-header patient-header"
+                                style="border: none;width:95%; background-color: #b9c9e6;" border="0">
                                 <tr>
                                     <td>
                                         <h3>Bine ai venit!</h3>
@@ -134,12 +134,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Programarile tale
+                    <td colspan="2">
+                        <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Programari
                         </p>
                         <center>
                             <div class="abc scroll" style="height: 250px;padding: 0;margin: 0;">
-                                <table width="85%" class="sub-table scrolldown" border="0">
+                                <table width="95%" class="sub-table scrolldown" border="0">
                                     <thead>
 
                                         <tr>

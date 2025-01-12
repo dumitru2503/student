@@ -53,7 +53,7 @@
       <td class="menu-btn menu-icon-appoinment">
         <a href="appointment.php">
           <div>
-            <p class="menu-text">Programările mele</p>
+            <p class="menu-text">Programări</p>
           </div>
         </a>
       </td>

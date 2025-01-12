@@ -95,7 +95,7 @@
                             Data de azi
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
-                            <?php $today ?>
+                            <?php echo $today ?>
                         </p>
                     </td>
                     <td width="10%">
