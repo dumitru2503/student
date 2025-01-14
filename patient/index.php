@@ -97,15 +97,15 @@
                                         </p>
 
                                         <h3>Programează un medic aici</h3>
-                                        <form action="schedule.php" method="post" style="display: flex">
+                                        <form action="./schedule.php" method="GET" style="display: flex">
 
                                             <input type="search" name="search" class="input-text "
-                                                placeholder="Caută medic și vom găsi sesiuni disponibile" list="doctors"
+                                                placeholder="Caută un serviciu" list="services"
                                                 style="width:45%;">&nbsp;&nbsp;
 
                                             <?php
-                                            echo '<datalist id="doctors">';
-                                            $list11 = $database->query("select name, email from users where type = 'd'");
+                                            echo '<datalist id="services">';
+                                            $list11 = $database->query("SELECT * FROM services");
 
                                             for ($y = 0; $y < $list11->num_rows; $y++) {
                                                 $row00 = $list11->fetch_assoc();

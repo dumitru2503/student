@@ -60,7 +60,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="../logout.php"><input type="button" value="Log out"
+                                    <a href="../logout.php"><input type="button" value="Deconectare"
                                             class="logout-btn btn-primary-soft btn"></a>
                                 </td>
                             </tr>
@@ -148,7 +148,7 @@
                         ?>
 
 
-                        <input type="Submit" value="Search" class="login-btn btn-primary btn"
+                        <input type="Submit" value="Căutare" class="login-btn btn-primary btn"
                             style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
 
                     </form>

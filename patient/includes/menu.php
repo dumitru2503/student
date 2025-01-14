@@ -25,7 +25,8 @@
       <td class="menu-btn menu-icon-home">
         <a href="index.php">
           <div>
-            <p class="menu-text">Acasă</p>
+            <p class="menu-text"><i class="fa-solid fa-house"
+                style="margin-right: 12px; padding: 10px; color: #ffffff;"></i>Acasă</p>
           </div>
         </a>
       </td>
@@ -34,7 +35,8 @@
       <td class="menu-btn menu-icon-doctor">
         <a href="doctors.php">
           <div>
-            <p class="menu-text">Toți medicii</p>
+            <p class="menu-text"><i class="fas fa-user-doctor"
+                style="margin-right: 12px; padding: 10px; color: #ffffff;"></i>Toți medicii</p>
           </div>
         </a>
       </td>
@@ -44,7 +46,8 @@
       <td class="menu-btn menu-icon-session">
         <a href="schedule.php">
           <div>
-            <p class="menu-text">Servicii</p>
+            <p class="menu-text"><i class="fa-solid fa-tooth"
+                style="margin-right: 12px; padding: 10px; color: #ffffff;"></i>Servicii</p>
           </div>
         </a>
       </td>
@@ -53,7 +56,8 @@
       <td class="menu-btn menu-icon-appoinment">
         <a href="appointment.php">
           <div>
-            <p class="menu-text">Programări</p>
+            <p class="menu-text"><i class="fa-solid fa-calendar-days"
+                style="margin-right: 12px; padding: 10px; color: #ffffff;"></i>Programări</p>
           </div>
         </a>
       </td>
@@ -62,7 +66,8 @@
       <td class="menu-btn menu-icon-settings">
         <a href="settings.php">
           <div>
-            <p class="menu-text">Setări</p>
+            <p class="menu-text"><i class="fas fa-cog"
+                style="margin-right: 12px; padding: 10px; color: #ffffff;"></i>Setări</p>
           </div>
         </a>
       </td>

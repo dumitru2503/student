@@ -68,7 +68,7 @@
                                 placeholder="Search Doctor name or Email" list="doctors">&nbsp;&nbsp;
 
 
-                            <input type="Submit" value="Search" class="login-btn btn-primary btn"
+                            <input type="Submit" value="Căutare" class="login-btn btn-primary btn"
                                 style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
 
                         </form>

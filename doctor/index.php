@@ -79,7 +79,7 @@
 
                     <td colspan="1" class="nav-bar">
                         <p
-                            style="font-size: 23px;color:#ffffff;border-radius: 40px; padding-left: 50px;padding-right: 300px; font-weight: 600; margin-left: 20px;padding-top: 30px;padding-bottom: 30px; border: 1px solid; background-color: #2d3663;">
+                            style="font-size: 23px;color:#ffffff;border-radius: 10px; padding: 10px 30px; font-weight: 600; margin-left: 20px; border: 1px solid; background-color: #2d3663;">
                             Profile</p>
 
                     </td>
@@ -107,16 +107,15 @@
                             <table class="filter-container doctor-header" style="border: none;margin-top:30px;width:95%"
                                 border="0">
                                 <tr>
-                                    <td style="background-color: #b9c9e6; padding-left: 30px; border-radius: 40px">
-                                        <h3>Welcome back!</h3>
+                                    <td style="background-color: #b9c9e6; padding-left: 30px; border-radius: 10px">
+                                        <h3>Bine ai venit!</h3>
                                         <h1><?php echo $user_name ?>.</h1>
-                                        <p>Thanks for joinnig with us. We are always trying to get you a complete
-                                            service<br>
-                                            You can view your dailly schedule, Reach Patients Appointment at
-                                            home!<br><br>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab unde quia quo a
+                                            itaque, suscipit aliquam ex saepe fugit? Amet, non quaerat! Quibusdam ipsam
+                                            delectus porro impedit corrupti, eaque quisquam!<br>
                                         </p>
                                         <a href="appointment.php" class="non-style-link"><button class="btn-primary btn"
-                                                style="width:30%;border-radius:40px">View My Appointments</button></a>
+                                                style="width:30%;border-radius: 5px">Vezi programările</button></a>
                                         <br>
                                         <br>
                                     </td>

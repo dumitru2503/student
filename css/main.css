@@ -1,4 +1,6 @@
 @import url("font-inter.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+
 :root {
   --primary-color: #2d3663;
   --secondary-color: #0ebad2;
@@ -328,7 +330,8 @@ input[type="search"]:focus {
 }
 
 .menu-text {
-  padding-left: 40%;
+  margin: 10px;
+  padding-left: 20%;
   font-weight: 500;
   font-size: 16px;
 }

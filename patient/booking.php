@@ -82,7 +82,7 @@
                             ?>
 
 
-                            <input type="Submit" value="Search" class="login-btn btn-primary btn"
+                            <input type="Submit" value="Căutare" class="login-btn btn-primary btn"
                                 style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
                         </form>
                     </td>
@@ -199,8 +199,13 @@
                                                                         <select class="input-text filter-container-items"
                                                                             style="margin: 0;width: 95%;" name="time" id="time">
                                                                             <option value="09:00">09:00</option>
-                                                                            <option value="10:00" disabled>10:00</option>
+                                                                            <option value="10:00">10:00</option>
                                                                             <option value="11:00">11:00</option>
+                                                                            <option value="11:00">12:00</option>
+                                                                            <option value="11:00">13:00</option>
+                                                                            <option value="11:00">14:00</option>
+                                                                            <option value="11:00">15:00</option>
+                                                                            <option value="11:00">16:00</option>
                                                                         </select>
                                                                         <br>
 

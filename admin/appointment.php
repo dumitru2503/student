@@ -61,7 +61,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="../logout.php"><input type="button" value="Log out"
+                                    <a href="../logout.php"><input type="button" value="Deconectare"
                                             class="logout-btn btn-primary-soft btn"></a>
                                 </td>
                             </tr>
