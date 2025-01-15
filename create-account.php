@@ -61,11 +61,21 @@
                 $stmt->bind_param("sssss", $email, $name, $password, $phone, $type);
                 $stmt->execute();
 
-                $_SESSION["user_email"] = $email;
-                $_SESSION["user_type"] = $type;
-                $_SESSION["user_name"] = $name;
+                $result = $database->prepare("SELECT * FROM users WHERE email = ?");
+                $result->bind_param("s", $email);
+                $result->execute();
+                $result = $result->get_result();
 
-                header('Location: patient/index.php');
+                if ($result->num_rows == 1) {
+                    $user = $result->fetch_assoc();
+                    $_SESSION['user_id'] = $user['id'];
+                    $_SESSION["user_email"] = $user['email'];
+                    $_SESSION["user_type"] = $user['type'];
+                    $_SESSION["user_name"] = $user['name'];
+
+                    header('Location: patient/index.php');
+                }
+
                 $error = '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>';
             }
 

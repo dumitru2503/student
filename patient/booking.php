@@ -62,7 +62,7 @@
                         <form action="" method="post" class="header-search">
 
                             <input type="search" name="search" class="input-text header-searchbar"
-                                placeholder="Search Doctor name or Email or Date (YYYY-MM-DD)"
+                                placeholder="Cautare serviciu"
                                 list="doctors">&nbsp;&nbsp;
 
                             <?php
@@ -140,7 +140,7 @@
 
                                                 $id = $_GET["id"];
 
-                                                $sqlmain = "SELECT s.id AS service_id, s.name AS service_name, u.name AS doctor_name, u.id AS doctor_id
+                                                $sqlmain = "SELECT s.id AS service_id, s.name AS service_name, s.price as service_price, u.name AS doctor_name, u.id AS doctor_id
                                                 FROM doctor_services AS ds
                                                 INNER JOIN services AS s ON ds.service_id = s.id
                                                 INNER JOIN users AS u ON ds.doctor_id = u.id
@@ -155,6 +155,7 @@
 
                                                 $service_id = $row["service_id"];
                                                 $service_name = $row["service_name"];
+                                                $service_price = $row["service_price"];
                                                 $doctor_id = $row["doctor_id"];
                                                 $doctor_name = $row["doctor_name"];
 
@@ -210,8 +211,7 @@
                                                                         <br>
 
                                                                         <div class="h3-search" style="font-size:18px;">
-                                                                            Pret : <b>2500 Lei</b>
-
+                                                                            <b>Pret : <?php echo $service_price ?> LEI</b>
                                                                         </div>
                                                                         <br>
 
