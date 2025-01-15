@@ -13,7 +13,7 @@
 </head>
 
 <body class="main-background">
-    <?php
+    <!-- <?php
 
     session_start();
 
@@ -75,7 +75,7 @@
         }
     }
 
-    ?>
+    ?> -->
 
     <center>
         <div class="container">

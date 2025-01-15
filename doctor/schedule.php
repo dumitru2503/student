@@ -89,7 +89,7 @@
                 <tr>
                     <td colspan="4">
                         <center>
-                            Insert here
+                            TODO: adauga orar
                         </center>
                     </td>
                 </tr>

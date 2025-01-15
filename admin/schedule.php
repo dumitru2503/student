@@ -90,6 +90,11 @@
                         </div>
                     </td>
                 </tr>
+
+                <p>
+                    TODO: adauga servicii
+                </p>
+
                 <?php die() ?>
                 <tr>
                     <td colspan="4" style="padding-top:10px;width: 100%;">

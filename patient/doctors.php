@@ -94,7 +94,9 @@
                 <tr>
                     <td colspan="4">
                         <center>
-                            ...
+                            <p>
+                                TODO: adauga setari
+                            </p>
                         </center>
                     </td>
                 </tr>

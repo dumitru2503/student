@@ -79,7 +79,7 @@
                     </td>
                     <td>
 
-                        <form action="" method="post" class="header-search">
+                        <!-- <form action="" method="post" class="header-search">
 
                             <input type="search" name="search12" class="input-text header-searchbar"
                                 placeholder="Search Patient name or Email" list="patient">&nbsp;&nbsp;
@@ -87,7 +87,7 @@
                             <input type="Submit" value="Căutare" name="search" class="login-btn btn-primary btn"
                                 style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
 
-                        </form>
+                        </form> -->
 
                     </td>
                     <td width="15%">

@@ -84,6 +84,10 @@
 
                 </tr>
 
+                <p>
+                    TODO: adauga setari
+                </p>
+
                 <?php die(); ?>
                 <tr>
                     <td colspan="4">
