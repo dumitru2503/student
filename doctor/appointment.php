@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/admin.css">
 
-    <title>Appointments</title>
+    <title>Programări</title>
     <style>
         .popup {
             animation: transitionIn-Y-bottom 0.5s;
@@ -88,11 +88,11 @@
                     <td width="13%">
                         <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                                 style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                                <font class="tn-in-text">Inapoi</font>
+                                <font class="tn-in-text">Înapoi</font>
                             </button></a>
                     </td>
                     <td>
-                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Appointment Manager</p>
+                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Programări</p>
 
                     </td>
                     <td width="15%">
@@ -174,7 +174,7 @@
 
                                                         <th class="table-headin">
 
-                                                            Date
+                                                            Data
 
                                                         </th>
 
@@ -186,7 +186,7 @@
 
                                                         <th class="table-headin">
 
-                                                            Actiuni
+                                                            Acțiuni
 
                                                     </tr>
                                                 </thead>
@@ -216,7 +216,7 @@
                                                                                 class="non-style-link">
                                                                                 <button class="btn-primary-soft btn button-icon btn-delete"
                                                                                     style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;">
-                                                                                    <font class="tn-in-text">Cancel</font>
+                                                                                    <font class="tn-in-text">Șterge</font>
                                                                                 </button>
                                                                             </a>
                                                                             &nbsp;&nbsp;&nbsp;
@@ -305,7 +305,7 @@
                                                                                 class="non-style-link">
                                                                                 <button class="btn-primary-soft btn button-icon btn-delete"
                                                                                     style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;">
-                                                                                    <font class="tn-in-text">Cancel</font>
+                                                                                    <font class="tn-in-text">Șterge</font>
                                                                                 </button>
                                                                             </a>
                                                                             &nbsp;&nbsp;&nbsp;

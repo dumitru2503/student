@@ -70,11 +70,11 @@
                     <td width="13%">
                         <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                                 style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                                <font class="tn-in-text">Inapoi</font>
+                                <font class="tn-in-text">Înapoi</font>
                             </button></a>
                     </td>
                     <td>
-                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Istoricul programarilor</p>
+                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Istoricul programărilor</p>
 
                     </td>
                     <td width="15%">
@@ -107,7 +107,7 @@
                     <td colspan="4" style="padding-top:10px;width: 100%;">
 
                         <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">
-                            Programari
+                            Programări
                             (<?php echo $result->num_rows; ?>)</p>
                     </td>
 
@@ -202,8 +202,8 @@
                                                     
                                                         <div style="width:100%;">
                                                         <div class="h3-search">
-                                                                    Data Programarii: ' . substr($appointment_date, 0, 30) . '<br>
-                                                                    Numarul: OC-000-' . $appointment_id . '
+                                                                    Data Programării: ' . substr($appointment_date, 0, 30) . '<br>
+                                                                    Codul: OC-000-' . $appointment_id . '
                                                                 </div>
                                                                 <div class="h1-search">
                                                                     ' . substr($service_name, 0, 21) . '<br>
@@ -214,7 +214,7 @@
                                                                 
                                                                 
                                                                 <div class="h4-search">
-                                                                    Ora: <b>@' . substr($appointment_time, 0, 5) . '</b> (1h)
+                                                                    Ora: <b>' . substr($appointment_time, 0, 5) . '</b> (1h)
                                                                 </div>
                                                                 <br>
                                                                 <a href="?action=drop&id=' . $appointment_id . '&service=' . $service_name . '&doctor=' . $doctor_name . '" >
@@ -254,24 +254,24 @@
         $action = $_GET["action"];
         if ($action == 'booking-added') {
             ?>
-            <div id="popup1" class="overlay">
-                <div class="popup">
-                    <center>
-                        <br><br>
-                        <h2>Programarea dvs. a fost realizată cu succes!</h2>
-                        <a class="close" href="appointment.php">&times;</a>
-                        <div style="display: flex;justify-content: center;">
+                            <div id="popup1" class="overlay">
+                                <div class="popup">
+                                    <center>
+                                        <br><br>
+                                        <h2>Programarea dvs. a fost realizată cu succes!</h2>
+                                        <a class="close" href="appointment.php">&times;</a>
+                                        <div style="display: flex;justify-content: center;">
 
-                            <a href="appointment.php" class="non-style-link"><button class="btn-primary btn"
-                                    style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;">
-                                    <font class="tn-in-text">&nbsp;&nbsp;OK&nbsp;&nbsp;</font>
-                                </button></a>
-                            <br><br><br><br>
-                        </div>
-                    </center>
-                </div>
-            </div>
-            <?php
+                                            <a href="appointment.php" class="non-style-link"><button class="btn-primary btn"
+                                                    style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;">
+                                                    <font class="tn-in-text">&nbsp;&nbsp;OK&nbsp;&nbsp;</font>
+                                                </button></a>
+                                            <br><br><br><br>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <?php
         } elseif ($action == 'drop') {
             $appointment_id = $_GET["id"];
             $service_name = $_GET["service"];
@@ -369,7 +369,7 @@
         //                     </tr>
         //                     <tr>
         //                         <td class="label-td" colspan="2">
-        //                             <label for="Tele" class="form-label">Telephone: </label>
+        //                             <label for="Tele" class="form-label">Număr de telefon: </label>
         //                         </td>
         //                     </tr>
         //                     <tr>

@@ -55,14 +55,14 @@
                     <td width="13%">
                         <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                                 style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                                <font class="tn-in-text">Inapoi</font>
+                                <font class="tn-in-text">Înapoi</font>
                             </button></a>
                     </td>
                     <td>
                         <form action="" method="post" class="header-search">
 
                             <input type="search" name="search" class="input-text header-searchbar"
-                                placeholder="Cautare serviciu"
+                                placeholder="Căutare serviciu"
                                 list="doctors">&nbsp;&nbsp;
 
                             <?php
@@ -211,7 +211,7 @@
                                                                         <br>
 
                                                                         <div class="h3-search" style="font-size:18px;">
-                                                                            <b>Pret : <?php echo $service_price ?> LEI</b>
+                                                                            <b>Preț : <?php echo $service_price ?> LEI</b>
                                                                         </div>
                                                                         <br>
 

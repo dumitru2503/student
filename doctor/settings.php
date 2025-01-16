@@ -59,7 +59,7 @@
                     <td width="13%">
                         <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                                 style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                                <font class="tn-in-text">Inapoi</font>
+                                <font class="tn-in-text">Înapoi</font>
                             </button></a>
                     </td>
                     <td>
@@ -280,7 +280,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="Tele" class="form-label">Telephone: </label>
+                                    <label for="Tele" class="form-label">Număr de telefon: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -399,12 +399,12 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <label for="Tele" class="form-label">Telephone: </label>
+                                            <label for="Tele" class="form-label">Număr de telefon: </label>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="tel" name="Tele" class="input-text" placeholder="Telephone Number" value="' . $tele . '" required><br>
+                                            <input type="tel" name="Tele" class="input-text" placeholder="Număr de telefon Number" value="' . $tele . '" required><br>
                                         </td>
                                     </tr>
                                     <tr>

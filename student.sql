@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2025 at 05:14 PM
+-- Generation Time: Jan 16, 2025 at 10:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -52,7 +52,8 @@ INSERT INTO `appointment` (`id`, `patient_id`, `doctor_id`, `service_id`, `date`
 (9, 17, 7, 9, '2024-11-18', '09:45:00'),
 (10, 18, 8, 3, '2024-11-18', '10:45:00'),
 (12, 15, 4, 1, '2024-11-26', '09:00:00'),
-(13, 15, 4, 1, '2024-12-01', '09:00:00');
+(13, 15, 4, 1, '2024-12-01', '09:00:00'),
+(17, 15, 4, 1, '2025-01-31', '09:00:00');
 
 -- --------------------------------------------------------
 
@@ -92,20 +93,21 @@ CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `image` varchar(255) NOT NULL
+  `image` varchar(255) NOT NULL,
+  `price` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`id`, `name`, `description`, `image`) VALUES
-(1, 'Implant dentar', 'Implantul dentar este solutia de lunga durata – iar pentru tine, arata si se simt ca dintii naturali.', '/service1.png'),
-(2, 'Coroane si punti', 'Restaurari protetice pe dinti naturali sau pe implanturi, cu ajutorul tehnologiei scanner-ului intraoral.', '/service2.png'),
-(3, 'Fatete dentare', 'Restaurarea prin fatete dentare este minim invaziva, delicata si cu rezutate de lunga durata.', '/service3.png'),
-(4, 'Aparat dentar', 'Rezultatele obtinute in urma unui astfel de tratament sunt nu doar exceptionale din punct de vedere estetic, ci si din punct de vedere functional.', '/service4.png'),
-(5, 'Laser dentar', 'Considerat a fi ultima tehnologie în materie de tratamente in medicină, laserul este acum un instrument nelipsit si in clinica noastra de stomatologie din Craiova.', '/service5.png'),
-(6, 'Parodontologie', 'Boala parodontala poate fi prevenita si tratata cu success prin terapii corecte, pentru a evita sau intarzia cat mai mult posibil pierderea dintilor.', '/service6.png');
+INSERT INTO `services` (`id`, `name`, `description`, `image`, `price`) VALUES
+(1, 'Implant dentar', 'Implantul dentar este solutia de lunga durata – iar pentru tine, arata si se simt ca dintii naturali.', '/service1.png', 1200),
+(2, 'Coroane si punti', 'Restaurari protetice pe dinti naturali sau pe implanturi, cu ajutorul tehnologiei scanner-ului intraoral.', '/service2.png', 800),
+(3, 'Fatete dentare', 'Restaurarea prin fatete dentare este minim invaziva, delicata si cu rezutate de lunga durata.', '/service3.png', 1500),
+(4, 'Aparat dentar', 'Rezultatele obtinute in urma unui astfel de tratament sunt nu doar exceptionale din punct de vedere estetic, ci si din punct de vedere functional.', '/service4.png', 2000),
+(5, 'Laser dentar', 'Considerat a fi ultima tehnologie în materie de tratamente in medicină, laserul este acum un instrument nelipsit si in clinica noastra de stomatologie din Craiova.', '/service5.png', 600),
+(6, 'Parodontologie', 'Boala parodontala poate fi prevenita si tratata cu success prin terapii corecte, pentru a evita sau intarzia cat mai mult posibil pierderea dintilor.', '/service6.png', 1000);
 
 -- --------------------------------------------------------
 
@@ -186,7 +188,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `services`

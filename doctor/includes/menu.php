@@ -59,7 +59,7 @@
       <td class="menu-btn menu-icon-patient">
         <a href="patient.php">
           <div>
-            <p class="menu-text">Pacienti</p>
+            <p class="menu-text">Pacienți</p>
           </div>
         </a>
       </td>

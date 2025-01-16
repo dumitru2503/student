@@ -135,7 +135,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Programari
+                        <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Programări
                         </p>
                         <center>
                             <div class="abc scroll" style="height: 250px;padding: 0;margin: 0;">
@@ -155,7 +155,7 @@
                                             </th>
                                             <th class="table-headin">
 
-                                                Data si ora
+                                                Data și ora
 
                                             </th>
 

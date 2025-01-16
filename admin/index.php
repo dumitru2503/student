@@ -127,7 +127,7 @@
                                                     <?php echo $patients->num_rows ?>
                                                 </div><br>
                                                 <div class="h3-dashboard">
-                                                    Pacienti &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    Pacienți &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 </div>
                                             </div>
                                             <div class="btn-icon-back dashboard-icons"
@@ -142,7 +142,7 @@
                                                     <?php echo $appointments->num_rows ?>
                                                 </div><br>
                                                 <div class="h3-dashboard">
-                                                    Programari &nbsp;&nbsp;
+                                                    Programări &nbsp;&nbsp;
                                                 </div>
                                             </div>
                                             <div class="btn-icon-back dashboard-icons"

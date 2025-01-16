@@ -120,7 +120,7 @@
 
                     <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                             style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                            <font class="tn-in-text">Inapoi</font>
+                            <font class="tn-in-text">Înapoi</font>
                         </button></a>
 
                 </td>
@@ -219,7 +219,7 @@
                                         <th class="table-headin">
 
 
-                                            Telephone
+                                            Număr de telefon
 
                                         </th>
                                         <th class="table-headin">
@@ -227,12 +227,12 @@
                                         </th>
                                         <th class="table-headin">
 
-                                            Date of Birth
+                                            Data de naștere
 
                                         </th>
                                         <th class="table-headin">
 
-                                            Events
+                                            Acțiuni
 
                                     </tr>
                                 </thead>
@@ -389,7 +389,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="Tele" class="form-label">Telephone: </label>
+                                    <label for="Tele" class="form-label">Număr de telefon: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -411,7 +411,7 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Date of Birth: </label>
+                                    <label for="name" class="form-label">Data de naștere: </label>
                                 </td>
                             </tr>
                             <tr>

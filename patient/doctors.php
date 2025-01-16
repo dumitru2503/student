@@ -57,16 +57,16 @@
                     <td width="13%">
                         <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                                 style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                                <font class="tn-in-text">Inapoi</font>
+                                <font class="tn-in-text">Înapoi</font>
                             </button></a>
                     </td>
                     <td>
                         <form action="./schedule.php" method="GET" class="header-search">
 
                             <input type="search" name="search" class="input-text header-searchbar"
-                                placeholder="Cautare serviciu" value="<?php echo $search_term ?>">&nbsp;&nbsp;
+                                placeholder="Căutare medic" value="<?php echo $search_term ?>">&nbsp;&nbsp;
 
-                            <input type="Submit" value="Cautare" class="login-btn btn-primary btn"
+                            <input type="Submit" value="Căutare" class="login-btn btn-primary btn"
                                 style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
                         </form>
                     </td>

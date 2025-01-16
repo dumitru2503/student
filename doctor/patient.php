@@ -73,7 +73,7 @@
 
                         <a href="./"><button class="login-btn btn-primary-soft btn btn-icon-back"
                                 style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
-                                <font class="tn-in-text">Inapoi</font>
+                                <font class="tn-in-text">Înapoi</font>
                             </button></a>
 
                     </td>
@@ -108,7 +108,7 @@
                 <tr>
                     <td colspan="4" style="padding-top:10px;">
                         <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">
-                            <?php echo "Pacienti (" . $patients->num_rows . ")"; ?>
+                            <?php echo "Pacienți (" . $patients->num_rows . ")"; ?>
                         </p>
                     </td>
 
@@ -121,7 +121,7 @@
                                 <form action="./patient.php" method="GET">
 
                                     <td style="text-align: right;">
-                                        Ordoneaza:&nbsp;
+                                        Ordonează:&nbsp;
                                     </td>
                                     <td width="30%">
                                         <select name="filter" id="filter" class="box filter-container-items"
@@ -158,19 +158,19 @@
                                 <thead>
                                     <tr>
                                         <th class="table-headin">
-                                            Name
+                                            Nume pacient
                                         </th>
                                         <th class="table-headin">
-                                            Telephone
+                                            Număr de telefon
                                         </th>
                                         <th class="table-headin">
                                             Email
                                         </th>
                                         <th class="table-headin">
-                                            Date of Birth
+                                            Data de naștere
                                         </th>
                                         <th class="table-headin">
-                                            Events
+                                            Acțiuni
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -297,7 +297,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="Tele" class="form-label">Telephone: </label>
+                                    <label for="Tele" class="form-label">Număr de telefon: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -319,7 +319,7 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Date of Birth: </label>
+                                    <label for="name" class="form-label">Data de naștere: </label>
                                 </td>
                             </tr>
                             <tr>
